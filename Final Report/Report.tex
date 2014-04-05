@@ -43,6 +43,23 @@ Something doo doo blah blah blah....
 \section{Introduction}
 	\subsection{Overview}
 	\subsection{Example Use Case}
+	When first opening the home page of the site, the user will be confronted with a splash page, with the option of either registering, or logging in using existing details. Either action done successfully will log the user in.
+	
+	Once logged in, the user is taken to their home page, which displays predicted journeys that the site thinks the user might be interested in using their preferences. From this page, they can access all features within the site, which include:
+	\begin{itemize}
+		\item 'My Activity' - Information about upcoming rides and hitches related to the user. The ability to accept or decline hitch requests for their journeys.
+		\item 'Messages' - Messages to and from other users.
+		\item 'My Profile' - Personal details about the user, available for editing.
+		\item 'Find a Journey' - A search page used to search for journeys from one location to another.
+		\item 'Post Journey' - The page used to post new journeys that the user will be partaking in.		
+	\end{itemize}
+	
+	When a user posts a journey from location A to location B using the 'Post Journey' page, it will display a map route which needs to be accepted by the user. Once this is accepted, the journey will be entered into the database, where it will be returned in other users searches if the parameters match the details of the journey.
+	
+	If another user does request to hitch a ride on the journey, the driver will be prompted in the 'My Activity' page, and will have the option of accepting or declining the hitch request. 
+	
+	The hitch request could be from location A to location B, but it could also be from location A to a new location C. Similarly it could be from location C to location B, or even location C to location D. It is up to the driver to accept or decline the hitch request, depending on how it changes the route that the driver takes.
+	
 	\subsection{Existing Services}
 	\subsection{How This Compares}
 	
