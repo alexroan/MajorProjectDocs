@@ -12,8 +12,11 @@ This section should discuss your preparation for the project, including backgrou
 \end {itemize}
 
 \section{Background}
-What was your background preparation for the project? What similar systems did you assess? What was your motivation and interest in this project? 
 \subsection{Overview}
+As a student studying in a university away from home, I have often needed to travel back home during the holidays or on weekends. My motivation for this project comes from the requirement that many people have to travel frequently from one place to another. 
+
+I have always driven to Cardiff from Aberystwyth and back during the holidays in a car with 4 spare seats. If there was some way I could offer those spare seats to other students or people travelling in the same or similar direction the cost of fuel could be split, meaning a cheaper mode of transport.
+
 \subsection{Example Use Case}
 	Upon opening the home page, the user will be confronted with  the option of either registering, or logging in using existing details. Either action done successfully will log the user in.
 	
@@ -34,10 +37,8 @@ What was your background preparation for the project? What similar systems did y
 	
 	If the driver accepts this new hitcher, the route will be altered if necessary to include the new pickup / drop off points and saved into the database with one of the spare spaces now filled. 
 \subsection{Existing Services}
-	There are existing websites that offer the same sort of carpooling service. The leading service is Carpooling.com \cite{carpooling_com}. This site offers users the opportunity to both post lifts and request lifts from other users, much like my service. Currently, this is the largest online carpooling service in the UK.
+	There are existing websites that offer the same sort of carpooling service. The leading services are Carpooling.com \cite{carpooling_com} and BlaBlaCar \cite{blabla}. These sites provide a platform for people to offer rides to other people needing to travel in similar directions.
 	
-\subsection{How this Compares}
-	When I began this project, the existing carpooling website Carpooling.com required that users outline the towns and cities on the route at which they were taking for their journey. Now however, on top of this specification of place names being driven through, they calculate some of the specific places that are being passed. This is what I have designed my project to do.
 
 \section{Analysis}
 Taking into account the problem and what you learned from the background work, what was your analysis of the problem? How did your analysis help to decompose the problem into the main tasks that you would undertake? Were there alternative approaches? Why did you choose one approach compared to the alternatives? 
@@ -49,17 +50,29 @@ In most cases, the agreed objectives or requirements will be the result of a com
 \subsection{Original Goals}
 	The original goals of the project were to produce an online service that enables people to share journeys with people who are looking to travel to and from similar locations or locations along the route of the driver. 
 	
+	This would enable the users to reduce the cost of the journeys by sharing the cost of fuel.
+	
 \subsection{Requirements}
-\subsubsection{Interface Requirements}
-\subsubsection{Functional Requirements}
-\subsubsection{Database Requirements}
-\subsubsection{Software Requirements}
-\subsubsection{Performance Requirements}
+Enable users to:
+\begin{itemize}
+\item FR1 - Register to the site
+\item FR2 - Log in if an existing member
+\item FR3 - Post new journeys  to the site, offering spare spaces
+\item FR4 - Search for a journey between two locations
+\item FR5 - Request to join a journey offered by another user
+\item FR6 - Accept a hitcher requesting to join a journey
+\item FR7 - Decline a hitcher requesting to join a journey
+\item FR8 - Suggest journeys depending on preferences
+\item FR9 - Cancel a journey
+\item FR10 - Send messages to other users
+\end{itemize}
 
 \section{Process}
 You need to describe briefly the life cycle model or research method that you used. You do not need to write about all of the different process models that you are aware of. Focus on the process model that you have used. It is possible that you needed to adapt an existing process model to suit your project; clearly identify what you used and how you adapted it for your needs.
 
 \subsection{Overview}
 \subsection{Methodology}
+I have chosen to use the Waterfall Model as the methodology for this project. The reason for this is that this project was of my own design, meaning that the requirements of it were known from the very beginning and were very unlikely to change. 
 \subsection{Planning}
 \subsection{Research}
+The vast majority of this service depends on its ability to recognise, locate and route directions from an origin to a destination. The APIs that were looked into were the Google Directions API and the Google Geocoding API. 
