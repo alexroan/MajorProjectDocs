@@ -18,23 +18,27 @@
 \fi
 #2}}
 
-\bibitem{apache_license}
-{Apache Software Foundation}, ``{Apache License, Version 2.0},''
-  \url{http://www.apache.org/licenses/LICENSE-2.0}, 2004.
+\bibitem{apache_poi}
+{Apache Software Foundation}, ``{Apache POI - the Java API for Microsoft
+  Documents},'' \url{http://poi.apache.org}, 2014.
  \begin{quotation}\noindent This is my annotation. I should add in a
   description here. \end{quotation}
 
-\bibitem{apache_poi}
-------, ``{Apache POI - the Java API for Microsoft Documents},''
-  \url{http://poi.apache.org}, 2014.
- \begin{quotation}\noindent This is my annotation. I should add in a
-  description here. \end{quotation}
+\bibitem{carpooling_com}
+Carpooling.com, ``Carpooling.com - existing online carpooling service,''
+  \url{http://www.carpooling.co.uk/}, 2001.
+ \begin{quotation}\noindent Existing carpooling website \end{quotation}
 
 \bibitem{HannahsPaper}
 H.~M. Dee and D.~C. Hogg, ``Navigational strategies in behaviour modelling,''
   \emph{Artificial Intelligence}, vol. 173(2), pp. 329--342, 2009.
  \begin{quotation}\noindent This is my annotation. I should add in a
   description here. \end{quotation}
+
+\bibitem{google_directions_api}
+developers.google.com, ``Google directions api,''
+  \url{https://developers.google.com/maps/documentation/directions/}, 2014.
+ \begin{quotation}\noindent API used to retrieve routing data \end{quotation}
 
 \bibitem{kittenpic_ref}
 S.~Duckworth, ``{A picture of a kitten at Hellifield Peel},''
@@ -51,12 +55,6 @@ M.~Neal, J.~Feyereisl, R.~Rascun\`{a}, and X.~Wang, ``{Don't touch me, I'm
   Systems}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2006, pp.
   349--361.
  \begin{quotation}\noindent This paper... \end{quotation}
-
-\bibitem{NumericalRecipes}
-W.~Press \emph{et~al.}, \emph{{Numerical recipes in C}}.\hskip 1em plus 0.5em
-  minus 0.4em\relax Cambridge University Press Cambridge, 1992, pp. 349--361.
- \begin{quotation}\noindent This is my annotation. I can add in comments that
-  are in \textbf{bold} and \em{italics} and then other content. \end{quotation}
 
 \bibitem{FailBlog}
 Various, ``Fail blog,'' \url{http://www.failblog.org/}, Aug. 2011, accessed
