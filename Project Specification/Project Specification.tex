@@ -20,43 +20,51 @@ The purpose of this document is to describe the prospective product in detail, o
 \end{itemize}
 
 \subsection{System Overview}
-The purpose of the Online Carpooling Service is to provide drivers with the ability to post the details of prospective Journeys, enabling non-drivers to travel in the same direction by joining them on their Journey. The motivation for this project is to share the cost of the Journey amongst people who would have otherwise travelled using separate transport modes.
+The purpose of the Online Carpooling Service is to provide drivers with the ability to post the details of prospective Journeys, enabling non-drivers to travel in the same direction by joining them on their Journey. The motivation for this project is to share the cost of the Journey amongst people who would have otherwise travelled using separate transport modes. As a student I often drive long distances from university to my home town in my car without anyone to share the cost of fuel with.
 
 
 \section{Overall Description}
 \subsection{Product Perspective}
 \subsubsection{Software Interfaces}
-An API should be developed to control data flow to and from the database and will be the only method of performing actions on it. It should be developed in such a way that the website can easily exploit data within the database by calling upon specific procedures within the API via HTTP.
+An Object Oriented software model should be developed to control data flow to and from the database and will be the only method of performing actions on it. It should be developed in such a way that the website can easily exploit data within the database by calling upon specific procedures within the API via HTTP.
+
 \subsubsection{User Interfaces}
-Website shit
+The Website will be the interface for the user base. Using it, they will have access to all of the features that the service offers and will be able to update their profile enabling suggestions to be put forward to them by the service.
+
 \subsection{User Characteristics}
 People who sign up to the site will provide personal information which will be saved in the database. This personal information will aid the service in producing Journey and Hitch suggestions. 
 
-The users accessing the site will use it to ...
-\subsection{Product Functions}
+The users accessing the site will use it to share journeys that they are partaking in with the aim of attracting other users to join them in those journeys. Conversely, the site is there for users who wish to find journeys that other people are driving, so that they can hitch a journey.
 
-Posting journeys etc...
+\subsection{Product Functions}
+The main functions of the site will be:
+\begin{itemize}
+\item Register as a new user to the site
+\item Log in with existing details
+\item Edit profile details
+\item Post a Journey that the user will be driving from location to location
+\item Search for journeys between two locations
+\item Request to Hitch a journey as a passenger
+\item Accept or decline a hitcher as the driver
+\item Send messages to other users on the site
+\end{itemize}
 
 \section{Specific Requirements}
 \subsection{Interface Requirements}
 The website interface must provide the following services:
-\begin{enumerate}
+\begin{description}
 
-\item The index page must provide:
-\begin{enumerate}
-\item A register form for new users.
-\item A log in form for existing users to log into their account.
-\end{enumerate}
+\item[Index Page] The index page must provide:
+\begin{description}
+\item[FR.I.01] Register Form - The page must provide an easy to access register form for personal details to be entered upon registration. Basic details needed are Email address, First name, Last name and Password. More specific details can be entered after registering to the site
+\item[FR.I.02] Log Form - There must be a section of the page dedicated to logging in existing users. It must be easily viewed and apparent to users.
+\end{description}
 
-\item When a person logs into their account, they must be provided with a home page detailing:
-\begin{enumerate}
-\item Their scheduled Journeys.
-\item Their scheduled Hitches.
-\item Messages from other users.
-\item Suggested Journeys and Hitches.
-\item A Journey search section.
-\end{enumerate}
-\end{enumerate}
+\item[Home Page] When a person logs into their account, they must be provided with a home page with the following:
+\begin{description}
+\item[FR.H.01] Menu - There should b a menu giving the user access to all of the functions separated out into pages that group functionality. 
+\end{description}
+\end{description}
 
 \subsection{Functional Requirements}
 The system must enable a Person to:
