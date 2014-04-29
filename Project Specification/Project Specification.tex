@@ -4,6 +4,10 @@
 \title{Project Specification}
 \author{Alexander Roan}
 \maketitle
+\begin{center}
+%\date{}
+Version 1.2 Draft
+\end{center}
 \end{titlepage}
 
 \tableofcontents
@@ -25,9 +29,6 @@ The purpose of the Online Carpooling Service is to provide drivers with the abil
 
 \section{Overall Description}
 \subsection{Product Perspective}
-\subsubsection{Software Interfaces}
-An Object Oriented software model should be developed to control data flow to and from the database and will be the only method of performing actions on it. It should be developed in such a way that the website can easily exploit data within the database by calling upon specific procedures within the API via HTTP.
-
 \subsubsection{User Interfaces}
 The Website will be the interface for the user base. Using it, they will have access to all of the features that the service offers and will be able to update their profile enabling suggestions to be put forward to them by the service.
 
@@ -50,8 +51,7 @@ The main functions of the site will be:
 \end{itemize}
 
 \section{Specific Requirements}
-\subsection{Interface Requirements}
-The website interface must provide the following services:
+The website must provide the following services:
 \begin{description}
 
 \item[Index Page] The index page must provide:
@@ -62,25 +62,19 @@ The website interface must provide the following services:
 
 \item[Home Page] When a person logs into their account, they must be provided with a home page with the following:
 \begin{description}
-\item[FR.H.01] Menu - There should b a menu giving the user access to all of the functions separated out into pages that group functionality. 
+\item[FR.H.01] Menu - There should be a menu giving the user access to all of the site's functions separated out into pages that group functionality 
+\item[FR.H.02] Logout - A logout option must be present
+\item[FR.H.03] User Journeys - Users must be able to see a list of their shared journeys and view their status. This could show how many spaces they have left and new requests others have made to hitch the journeys.
+\item[FR.H.04] User Hitches - User must be able to view a list of the hitches they have requested to other journeys and view their status. The status of the hitch request depends on whether or not it has been accepted by the driver.
+\item[FR.H.05] Post Journey - The user must be able to share journeys by posting the details of the journey up on the page. the site must provide a map-style preview of the journey so that the user can be sure the correct origin and destination have been set.
+\item[FR.H.06] Search For Journeys - The site must provide a search function for the user to find journeys from one location to another. This search function must include date parameters.
+\item[FR.H.07] Make a Hitch Request - If a user a selected a journey after searching, they must be able to make a hitch request provided there are spaces remaining.
+\item[FR.H.08] Accept/Decline Hitch Requests - When another user requests to hitch a journey that a user has shared, the site must prompt them to accept or decline the new hitcher.
+\item[FR.H.09] Suggested Journeys - The site must provide suggested journeys that it predicts a user may be interested in due to their profile details.
+\item[FR.H.10] Messages - The ability to send and receive messages to and from other users on the site must be available.
+\item[FR.H.11] Profile - The user must be able to view and edit their personal and profile details. 
+\item[FR.H.12] Journey Cancelling - The user must be able to cancel a journey at any time.
 \end{description}
 \end{description}
-
-\subsection{Functional Requirements}
-The system must enable a Person to:
-\begin{enumerate}
-\item Register their details to the service to produce a user account.
-\item Post Journey details to the service.
-\item Cancel a Journey.
-\item Search for Journeys using a specific origin and destination.
-\item Request to Hitch a Journey.
-\item Accept or Decline a Hitch request from a hitcher.
-\item Cancel a Hitch.
-\end{enumerate}
-\subsection{Performance Requirements}
-\subsection{Database Requirements}
-
-\subsection{Software Requirements}
-
 
 \end{document}
