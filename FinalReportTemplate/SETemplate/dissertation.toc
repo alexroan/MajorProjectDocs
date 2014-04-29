@@ -16,20 +16,17 @@
 \contentsline {section}{\numberline {2.2}Technologies}{5}
 \contentsline {subsection}{\numberline {2.2.1}PHP}{5}
 \contentsline {subsection}{\numberline {2.2.2}JQuery}{6}
-\contentsline {subsection}{\numberline {2.2.3}PSQL Database}{6}
+\contentsline {subsection}{\numberline {2.2.3}PostgreSQL Database}{6}
 \contentsline {subsection}{\numberline {2.2.4}Github}{6}
-\contentsline {section}{\numberline {2.3}Service Infrastructure}{6}
-\contentsline {subsection}{\numberline {2.3.1}University Hosting}{6}
-\contentsline {subsection}{\numberline {2.3.2}LAMP Server}{6}
-\contentsline {section}{\numberline {2.4}Service Design}{6}
-\contentsline {subsection}{\numberline {2.4.1}Overview}{6}
-\contentsline {subsection}{\numberline {2.4.2}Method}{6}
-\contentsline {subsection}{\numberline {2.4.3}Structure of Database API}{6}
-\contentsline {section}{\numberline {2.5}Website Design}{7}
-\contentsline {subsection}{\numberline {2.5.1}Overview}{7}
-\contentsline {subsection}{\numberline {2.5.2}PHP}{7}
-\contentsline {subsection}{\numberline {2.5.3}Bootstrap}{7}
-\contentsline {subsection}{\numberline {2.5.4}JavaScript and JQuery Library}{7}
+\contentsline {section}{\numberline {2.3}Overall Architecture}{6}
+\contentsline {subsection}{\numberline {2.3.1}Overview}{6}
+\contentsline {subsection}{\numberline {2.3.2}Method}{6}
+\contentsline {subsection}{\numberline {2.3.3}Structure of Database Controller}{6}
+\contentsline {section}{\numberline {2.4}Website Design}{7}
+\contentsline {subsection}{\numberline {2.4.1}Overview}{7}
+\contentsline {subsection}{\numberline {2.4.2}PHP}{7}
+\contentsline {subsection}{\numberline {2.4.3}Bootstrap}{7}
+\contentsline {subsection}{\numberline {2.4.4}JavaScript and JQuery Library}{7}
 \contentsline {chapter}{\numberline {3}Implementation}{8}
 \contentsline {section}{\numberline {3.1}Overview}{8}
 \contentsline {section}{\numberline {3.2}PHP}{8}
