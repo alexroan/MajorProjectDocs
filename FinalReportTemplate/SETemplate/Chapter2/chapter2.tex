@@ -28,18 +28,39 @@ Some example sub-sections may be as follows, but the specific sections are for y
 		Github \cite{github} version control web hosting was chosen as the desired.
 		 
 \section{Overall Architecture}
-	\subsection{Overview}
-	
+	\subsection{Overview}	
+		The data storage system the website uses is a PostgreSQL database which contains the following tables:
+		\begin{itemize}
+		\item Person - Personal details of each user.
+		\item Journey - Details of Journeys that users have posted.
+		\item Journey\textunderscore Step - Each journey has many journey steps. This table holds the geographical location, the related journey and the order of the step.
+		\item Journey\textunderscore Step\textunderscore Temp - A temporary table used when the journey steps for a particular journey change. This may occur is a hitch request is accepted which alters the route of the journey.
+		\item Hitch\textunderscore Request - Details about a hitch request made from a person to a particular journey.
+		\item Message - Messages sent from user to user.
+		\end{itemize}
+		
+		All actions performed on the database are done via a connection from the PHP database controller classes. Each table has a representative PHP model class mirroring the table. Controller classes control these classes to insert, update and delete records from each of the tables. 
+		
+		The website instantiates the database controller classes to enable the site to produce dynamic output and allow the user to access all of the site's features once logged in.
 	\subsection{Method}
+		The waterfall software development methodology was used as the development methodology for this project. A detailed project specification document was produced to outline the key functional requirements of the final release. 
+		
+		A design specification document was produced to outline the key design aspects of the site, including the database and database controller classes in PHP. It also outlined how the website would communicate with these controller classes.
+		
+		As well as the design specification document, UML design diagrams describing the database structure and database controller structure were produced. Use case diagrams describe how users interact with the website.
 	\subsection{Structure of Database Controller}
-		The Database Controller is the name given to the object oriented structure of PHP classes used to control data flow to and from the database. For each of the main tables in the database, there is a corresponding PHP class with the same name: Hitch\textunderscore Request, Journey, Journey\textunderscore Step, Message and Person. The classes that model these tables have attributes matching those of the table attributes, and contain the 4 methods Create, Load, Update, Delete; following the CRUD persistent storage technique. The Create methods in each of the classes uses attribute values to create a new value in the corresponding database table. The Update methods update the related value already in the corresponding table using the attributes in the class object. The Load method loads the attributes to the class object from the corresponding table in the database using the primary key as a parameter. The Delete method simply deletes the related value from the corresponding table in the database using it's primary key stored in the class object's attributes. Upon instantiating each of the model class objects, a non-compulsory parameter may be parsed to the constructor as the primary key to that table. If something is parsed in this parameter, the constructor will call the Load method, which attempts to populate the class object's attributes with values from the corresponding table using the parameter as the primary key.
+		The Database Controller is the name given to the object oriented structure of PHP classes used to control data flow to and from the database. For each of the main tables in the database, there is a corresponding PHP class with the same name: Hitch\textunderscore Request, Journey, Journey\textunderscore Step, Message and Person. These classes that model the tables have attributes matching those of the table attributes and contain the 4 methods: Create, Load, Update, Delete; following the CRUD persistent storage technique\cite{crud_technique}. The Create method in each of the classes uses the class attribute values to create a new entry in the corresponding database table. The Update methods update the related entry already in the corresponding table using the attributes in the class object by the primary key that will have been retrieved from the database upon executing the Create method and stored as once of the class attributes. The Load method loads the attributes to the class object from the corresponding table in the database using the primary key as a parameter. The Delete method simply deletes the related entry from the corresponding table in the database using its primary key stored in the class object's attributes. The Delete method also resets all of the attribute values in the object just in case the object is used again for a different entry in the database. 
 		
-		Each of the table model classes are utilized by controller classes.
+		Upon instantiating each of the model class objects, a non-compulsory parameter may be parsed to the constructor as the primary key to that table. If something is parsed in this parameter, the constructor will call the Load method, which attempts to populate the class object's attributes with values from the corresponding table using the parameter as the primary key.
 		
+		Each of the table model classes are utilized by controller classes. These classes instantiate their model classes to manipulate the entries in the database. Each of the controllers are unique to the tasks that need to be performed on each of the tables and often involve interaction between the controllers. For example, when a new Journey gets posted by a user, the Journey\textunderscore Controller class would be instantiated. This object would then instantiate a Journey class object, populate its attributes with values and use its Create method to insert the data into the database. It would then instantiate a Journey\textunderscore Step\textunderscore Controller class which in turn would instantiate and populate a series of Journey\textunderscore Step classes depending on the number of steps in that journey. Each of the entries would then be inserted into the database by the controller calling the Create method in each of the Journey\textunderscore Step objects. 		
 		
 \section{Website Design}
 	\subsection{Overview}
+		The website is produced by the collection of 25 PHP files which dynamically output HTML depending on the data that is received from the database controller classes. They also provide a platform for users to access all of the features available to them that the site offers.
 	\subsection{PHP}
+		The PHP files responsible for dynamically outputting the website maintain a session throughout the user's time on the site. This session allows the site to maintain a log on account for the user as they navigate through the site. The only data that is stored continuously as a session variable is the user's email address, which is used when they log in or register to the site.
+		
 	\subsection{Bootstrap}
 	\subsection{JavaScript and JQuery Library}
 	Google maps embedding
