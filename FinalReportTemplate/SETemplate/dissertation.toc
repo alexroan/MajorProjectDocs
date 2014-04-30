@@ -15,43 +15,45 @@
 \contentsline {section}{\numberline {2.1}Overview}{5}
 \contentsline {section}{\numberline {2.2}Technologies}{5}
 \contentsline {subsection}{\numberline {2.2.1}PHP}{5}
-\contentsline {subsection}{\numberline {2.2.2}JQuery}{6}
+\contentsline {subsection}{\numberline {2.2.2}JQuery}{5}
 \contentsline {subsection}{\numberline {2.2.3}PostgreSQL Database}{6}
 \contentsline {subsection}{\numberline {2.2.4}Github}{6}
+\contentsline {subsection}{\numberline {2.2.5}Programming Environment}{6}
 \contentsline {section}{\numberline {2.3}Overall Architecture}{6}
 \contentsline {subsection}{\numberline {2.3.1}Overview}{6}
-\contentsline {subsection}{\numberline {2.3.2}Method}{7}
-\contentsline {subsection}{\numberline {2.3.3}Structure of Database Controller}{7}
+\contentsline {subsection}{\numberline {2.3.2}Other Considered API Structures}{6}
+\contentsline {subsection}{\numberline {2.3.3}Method}{7}
+\contentsline {subsection}{\numberline {2.3.4}Structure of Database Controller}{7}
 \contentsline {section}{\numberline {2.4}Website Design}{8}
 \contentsline {subsection}{\numberline {2.4.1}Overview}{8}
 \contentsline {subsection}{\numberline {2.4.2}PHP}{8}
-\contentsline {subsection}{\numberline {2.4.3}Bootstrap}{8}
-\contentsline {subsection}{\numberline {2.4.4}JavaScript and JQuery Library}{8}
-\contentsline {chapter}{\numberline {3}Implementation}{9}
-\contentsline {section}{\numberline {3.1}Overview}{9}
-\contentsline {section}{\numberline {3.2}PHP}{9}
-\contentsline {section}{\numberline {3.3}Google Directions API}{9}
-\contentsline {section}{\numberline {3.4}Database}{9}
-\contentsline {section}{\numberline {3.5}Database API}{9}
-\contentsline {section}{\numberline {3.6}Website}{10}
-\contentsline {chapter}{\numberline {4}Testing}{11}
-\contentsline {section}{\numberline {4.1}Overview}{11}
-\contentsline {section}{\numberline {4.2}Database API Testing}{11}
-\contentsline {subsection}{\numberline {4.2.1}Overview?}{11}
-\contentsline {subsection}{\numberline {4.2.2}Unit Tests}{11}
-\contentsline {subsection}{\numberline {4.2.3}Functional Tests}{11}
-\contentsline {section}{\numberline {4.3}Website Testing}{11}
-\contentsline {subsection}{\numberline {4.3.1}Overview}{11}
-\contentsline {subsection}{\numberline {4.3.2}Functional Tests}{11}
-\contentsline {chapter}{\numberline {5}Evaluation}{12}
-\contentsline {section}{\numberline {5.1}Original Goals}{13}
-\contentsline {section}{\numberline {5.2}Accomplishments}{13}
-\contentsline {section}{\numberline {5.3}Future Improvements}{13}
-\contentsline {section}{\numberline {5.4}Future Development}{13}
-\contentsline {section}{\numberline {5.5}Design Choices}{13}
-\contentsline {section}{\numberline {5.6}Approach}{13}
-\contentsline {chapter}{Appendices}{14}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{15}
-\contentsline {chapter}{\numberline {B}Code samples}{16}
-\contentsline {section}{\numberline {2.1}Definitions}{17}
-\contentsline {chapter}{Annotated Bibliography}{18}
+\contentsline {subsection}{\numberline {2.4.3}Bootstrap}{10}
+\contentsline {subsection}{\numberline {2.4.4}JavaScript and JQuery Library}{11}
+\contentsline {chapter}{\numberline {3}Implementation}{12}
+\contentsline {section}{\numberline {3.1}Overview}{12}
+\contentsline {section}{\numberline {3.2}PHP}{12}
+\contentsline {section}{\numberline {3.3}Google Directions API}{12}
+\contentsline {section}{\numberline {3.4}Database}{13}
+\contentsline {section}{\numberline {3.5}Database API}{13}
+\contentsline {section}{\numberline {3.6}Website}{13}
+\contentsline {chapter}{\numberline {4}Testing}{14}
+\contentsline {section}{\numberline {4.1}Overview}{14}
+\contentsline {section}{\numberline {4.2}Database API Testing}{14}
+\contentsline {subsection}{\numberline {4.2.1}Overview?}{14}
+\contentsline {subsection}{\numberline {4.2.2}Unit Tests}{14}
+\contentsline {subsection}{\numberline {4.2.3}Functional Tests}{14}
+\contentsline {section}{\numberline {4.3}Website Testing}{14}
+\contentsline {subsection}{\numberline {4.3.1}Overview}{14}
+\contentsline {subsection}{\numberline {4.3.2}Functional Tests}{14}
+\contentsline {chapter}{\numberline {5}Evaluation}{15}
+\contentsline {section}{\numberline {5.1}Original Goals}{16}
+\contentsline {section}{\numberline {5.2}Accomplishments}{16}
+\contentsline {section}{\numberline {5.3}Future Improvements}{16}
+\contentsline {section}{\numberline {5.4}Future Development}{16}
+\contentsline {section}{\numberline {5.5}Design Choices}{16}
+\contentsline {section}{\numberline {5.6}Approach}{16}
+\contentsline {chapter}{Appendices}{17}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{18}
+\contentsline {chapter}{\numberline {B}Code samples}{19}
+\contentsline {section}{\numberline {2.1}Definitions}{20}
+\contentsline {chapter}{Annotated Bibliography}{21}
