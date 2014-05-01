@@ -23,11 +23,11 @@
 \contentsline {subsection}{\numberline {2.3.1}Overview}{6}
 \contentsline {subsection}{\numberline {2.3.2}Other Considered API Structures}{6}
 \contentsline {subsection}{\numberline {2.3.3}Method}{7}
-\contentsline {subsection}{\numberline {2.3.4}Structure of Database Controller}{7}
+\contentsline {subsection}{\numberline {2.3.4}Structure of Database Controller}{8}
 \contentsline {section}{\numberline {2.4}Website Design}{8}
 \contentsline {subsection}{\numberline {2.4.1}Overview}{8}
-\contentsline {subsection}{\numberline {2.4.2}PHP}{8}
-\contentsline {subsection}{\numberline {2.4.3}Bootstrap}{10}
+\contentsline {subsection}{\numberline {2.4.2}PHP}{9}
+\contentsline {subsection}{\numberline {2.4.3}Bootstrap}{11}
 \contentsline {subsection}{\numberline {2.4.4}JavaScript and JQuery Library}{11}
 \contentsline {chapter}{\numberline {3}Implementation}{12}
 \contentsline {section}{\numberline {3.1}Overview}{12}
@@ -55,5 +55,6 @@
 \contentsline {chapter}{Appendices}{17}
 \contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{18}
 \contentsline {chapter}{\numberline {B}Code samples}{19}
-\contentsline {section}{\numberline {2.1}Definitions}{20}
-\contentsline {chapter}{Annotated Bibliography}{21}
+\contentsline {chapter}{\numberline {C}Definitions}{20}
+\contentsline {chapter}{\numberline {D}Design Diagrams}{21}
+\contentsline {chapter}{Annotated Bibliography}{22}

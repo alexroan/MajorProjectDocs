@@ -24,7 +24,7 @@ You should also identify any support tools that you used. You should discuss you
 		Github \cite{github} version control web hosting was chosen as the desired.
 		
 	\subsection{Programming Environment}
-	
+		Developing an object oriented application in PHP meant that an suitable IDE was required for the development process. Netbeans IDE 7.3.1 was the selected tool for this job. 
 		 
 \section{Overall Architecture}
 	\subsection{Overview}	
@@ -43,7 +43,11 @@ You should also identify any support tools that you used. You should discuss you
 		The website instantiates the database controller classes to enable the site to produce dynamic output and allow the user to access all of the site's features once logged in.
 		
 	\subsection{Other Considered API Structures}
-		This was not the first choice structure from the beginning. Investigative prototypes were developed that completely separated the website from an API that interacted with the database. The prospect of a procedural API was considered, prompting a basic prototype to be built. This seemed to work well but did not follow any sort of design pattern as it was not object oriented. This caused problems as it grew because of the constant reproduction of brand new code that produced very unique SQL queries. Any change in database structure resulted in a massive amount of re-factoring for the procedural API, so it was deemed that Object Oriented was the right path to follow. If the API was going to separate from the website it should probably be RESTful. This was considered in detail but deemed not right for the project because of the scale of it. If there were other methods of access that would be made available, for example mobile applications and other third party websites, REST would be a perfect solution. But because only this website would be access the API, there is no need to separate the website from the API. This is how the current structure of database controller classes and website files came to be. The website files are not object oriented and simply maintain a session whilst the user is browsing. The database controller files are object oriented and control data flow to and from the database. The website files simply instantiate database controller classes and use their methods as the user performs actions on the website.
+		The final structure of the database controller that is present in the final system was not originally the first choice for it. Investigative prototypes were developed that completely separated the website from an API that interacted with the database. 
+		
+		The prospect of a procedural API was considered, prompting a basic prototype to be built. It worked well to an extent but because of it procedural nature did not follow any sort of design pattern as it was not object oriented. The method of data transferral between API and website was that of JSON data, which was sent via HTTP POST to a single API URL. This JSON data would contain a 'request\textunderscore type' field, which would indicate to the API what kind of operation needed to be called on the rest of the JSON data. A data encoder method would parse this data, call a specific procedure which would perform some kind of action of the JSON data and query the database, then echo JSON data back to the website with the result of the request. This structure worked fairly well, but the development over time slowly became more of a hassle as the entropy of it outgrew the benefits. Any slight change in database structure or table meant changing every function that queried the database, which made the code almost impossible to refactor or update. It was deemed that Object Oriented was the right path to follow. 
+		
+		If the API was going to separate from the website it should probably be in the form of a Representation State Transfer architecture, or REST. RESTful web services explicitly use HTTP methods to perform all queries on the database. They are usually used for high performance services with many queries being passed to the server from many sources. Implementing a RESTful API was considered in detail but deemed not right for the project because of the scale of it. If there were other methods of access that would be made available, for example mobile applications and other third party websites, REST would be a perfect solution. But because only service accessing the API is this website, there is no need to separate the website from the API. This is how the current structure of database controller classes and website files came to be. The website files are not object oriented and simply maintain a session whilst the user is browsing. The database controller files are object oriented and control data flow to and from the database. The website gives the user an interface to take advantage of the database controller classes and use their methods to perform actions of the database.
 		
 	\subsection{Method}
 		The waterfall software development methodology was used as the development methodology for this project. A detailed project specification document was produced to outline the key functional requirements of the final release. 
@@ -59,7 +63,9 @@ You should also identify any support tools that you used. You should discuss you
 		
 		Upon instantiating each of the model class objects, a non-compulsory parameter may be parsed to the constructor as the primary key to that table. If something is parsed in this parameter, the constructor will call the Load method, which attempts to populate the class object's attributes with values from the corresponding table using the parameter as the primary key.
 		
-		Each of the table model classes are utilized by controller classes. These classes instantiate their model classes to manipulate the entries in the database. Each of the controllers are unique to the tasks that need to be performed on each of the tables and often involve interaction between the controllers. For example, when a new Journey gets posted by a user, the Journey\textunderscore Controller class would be instantiated. This object would then instantiate a Journey class object, populate its attributes with values and use its Create method to insert the data into the database. It would then instantiate a Journey\textunderscore Step\textunderscore Controller class which in turn would instantiate and populate a series of Journey\textunderscore Step classes depending on the number of steps in that journey. Each of the entries would then be inserted into the database by the controller calling the Create method in each of the Journey\textunderscore Step objects. 		
+		Each of the table model classes are utilized by controller classes. These classes instantiate their model classes to manipulate the entries in the database. Each of the controllers are unique to the tasks that need to be performed on each of the tables and often involve interaction between the controllers. For example, when a new Journey gets posted by a user, the Journey\textunderscore Controller class would be instantiated. This object would then instantiate a Journey class object, populate its attributes with values and use its Create method to insert the data into the database. It would then instantiate a Journey\textunderscore Step\textunderscore Controller class which in turn would instantiate and populate a series of Journey\textunderscore Step classes depending on the number of steps in that journey. Each of the entries would then be inserted into the database by the controller calling the Create method in each of the Journey\textunderscore Step objects. 	
+				
+		A UML class diagram of the controller and model classes can be found in Appendix D. 
 		
 \section{Website Design}
 	\subsection{Overview}
@@ -85,12 +91,12 @@ You should also identify any support tools that you used. You should discuss you
 		
 		It contains a standard CSS file with the central classes with a large online repository of additional CSS files available for download for additional effects. The styles used in this project and where they are as following:
 		\begin{description}
-		\item['Jumbotron'] Jumbotron style was used on 'index.php'. The header across the top from this style is also maintained throughout the website on all pages.
-		\item['Dashboard'] Dashboard is used as a side menu system. It was used on the 'messages.php' page along with JQuery to separate the Inbox, Sent items and New Message.
-		\item['Signin'] Signin is used for form control. It is used on every page where data is entered in the style of forms: 'search\textunderscore journey.php', 'post\textunderscore journey.php' and 'index.php'.
+		\item['Jumbotron'] Jumbotron\cite{bootstrap_jumbotron} style was used on 'index.php'. The header across the top from this style is also maintained throughout the website on all pages.
+		\item['Dashboard'] Dashboard\cite{bootstrap_dashboard} is used as a side menu system. It was used on the 'messages.php' page along with JQuery to separate the Inbox, Sent items and New Message.
+		\item['Signin'] Signin\cite{bootstrap_signin} is used for form control. It is used on every page where data is entered in the style of forms: 'search\textunderscore journey.php', 'post\textunderscore journey.php' and 'index.php'.
 		\end{description}
 	\subsection{JavaScript and JQuery Library}
-	Google maps embedding
+		JavaScript is generated dynamically by the website PHP files that generate web pages for the user. The route maps that are displayed on the journey pages are generated by using JavaScript and the Google Maps API with JavaScript \cite{google_maps_javascript_api}. Jquery is used on the 'messages.php' page using the functions 'Hide()' and 'Show()' to display the correct div for the user when sending, reading inbox, or sent items from it.
 
 %\section{Overall Architecture}
 
