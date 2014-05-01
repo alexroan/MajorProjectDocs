@@ -17,9 +17,13 @@ As a student studying in a university away from home, I have often needed to tra
 
 I have always driven to Cardiff from Aberystwyth and back during the holidays in a car with 4 spare seats. If there was some way I could offer those spare seats to other students or people travelling in the same or similar direction the cost of fuel could be split, meaning a cheaper mode of transport.
 
+With the cost of public transport soaring ever higher\cite{gov_public_transport_doc}, travelling around the country is becoming a more expensive task year after year. Not only are Bus and Train prices increasing, but petrol prices have sky rocketed in the last century\cite{guardian_fuel_prices} as well. This website aims to bring people together who are travelling in similar directions to save on the cost of fuel instead of having to pay a full train fair or travelling alone. 
+
+A one way train ticket between Aberystwyth and Cardiff costs around \pounds 54.80\cite{trainline_aber_cardiff_price}, a journey that in a small car can cost as little as \pounds 20 in fuel. If That journey is shared between a driver and a passenger who would otherwise have no option but to take the train, they would each only need to pay \pounds 10 for the journey. The driver saves \pounds 10 on their journey, and the passenger saves a massive \pounds 44.80 on theirs!
+
 
 \subsection{Example Use Case}
-	Upon opening the home page, the user will be confronted with  the option of either registering, or logging in using existing details. Either action done successfully will log the user in.
+	Upon opening the home page, the user will be confronted with the option of either registering, or logging in using existing details. Either action done successfully will log the user in.
 	
 	Once logged in, the user is taken to their home page, which displays predicted journeys that the site thinks the user might be interested in using their preferences. From this page, they can access all features within the site, which include:
 	\begin{itemize}
@@ -36,9 +40,14 @@ I have always driven to Cardiff from Aberystwyth and back during the holidays in
 	
 	The hitch request could be from location A to location B, but it could also be from location A to a new location C. Similarly it could be from location C to location B, or even location C to location D. It is up to the driver to accept or decline the hitch request, depending on how it changes the route that the driver takes.
 	
-	If the driver accepts this new hitcher, the route will be altered if necessary to include the new pickup / drop off points and saved into the database with one of the spare spaces now filled. 
+	If the driver accepts this new hitcher, the route will be altered if necessary to include the new pickup / drop off points and saved into the database with one of the spare spaces now filled.
+	 
 \subsection{Existing Services}
 	There are existing websites that offer the same sort of carpooling service. The leading services are Carpooling.com \cite{carpooling_com} and BlaBlaCar \cite{blabla}. These sites provide a platform for people to offer rides to other people needing to travel in similar directions.
+	
+	\begin{description}
+	\item[Carpooling.com] This is a worldwide service which offers registered users the chance to share rides to other users
+	\end{description}
 	
 
 \section{Analysis}
@@ -69,11 +78,14 @@ Enable users to:
 \end{itemize}
 
 \section{Process}
-You need to describe briefly the life cycle model or research method that you used. You do not need to write about all of the different process models that you are aware of. Focus on the process model that you have used. It is possible that you needed to adapt an existing process model to suit your project; clearly identify what you used and how you adapted it for your needs.
 
 \subsection{Overview}
+
 \subsection{Methodology}
 I have chosen to use the Waterfall Model as the methodology for this project. The reason for this is that this project was of my own design, meaning that the requirements of it were known from the very beginning and were very unlikely to change. 
 \subsection{Planning}
+
 \subsection{Research}
-The vast majority of this service depends on its ability to recognise, locate and route directions from an origin to a destination. The APIs that were looked into were the Google Directions API \cite{google_directions_api} and the Google Geocoding API. 
+The vast majority of this service depends on its ability to recognise, locate and route directions from an origin to a destination. It was clear from the beginning that either a routing algorithm was needed to be developed using real map data, or an existing or multiple existing APIs needed to be utilized to produce routing data that could be saved locally to the site's database for processing. 
+
+The APIs that were looked into were the Google Directions API \cite{google_directions_api} and the Google Geocoding API. 
