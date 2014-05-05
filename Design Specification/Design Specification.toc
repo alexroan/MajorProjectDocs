@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {subsection}{\numberline {1.1}Purpose}{2}
+\contentsline {subsection}{\numberline {1.2}Objectives}{2}
+\contentsline {section}{\numberline {2}Database Structure}{2}
+\contentsline {section}{\numberline {3}PHP}{5}
+\contentsline {subsection}{\numberline {3.1}Overview}{5}
+\contentsline {subsection}{\numberline {3.2}Database Controller}{5}
+\contentsline {subsubsection}{\numberline {3.2.1}API.php}{6}
+\contentsline {subsubsection}{\numberline {3.2.2}Journey\textunderscore Controller.php}{6}
+\contentsline {subsubsection}{\numberline {3.2.3}Journey\textunderscore Step\textunderscore Controller.php}{7}
+\contentsline {subsubsection}{\numberline {3.2.4}Message\textunderscore Controller.php}{8}
+\contentsline {subsubsection}{\numberline {3.2.5}Hitch\textunderscore Request\textunderscore Controller.php}{8}
+\contentsline {subsection}{\numberline {3.3}Website}{8}

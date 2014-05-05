@@ -1,0 +1,222 @@
+\documentclass[11pt]{article}
+\begin{document}
+\begin{titlepage}
+\title{Design Specification}
+\author{Alexander Roan}
+\maketitle
+\begin{center}
+%\date{}
+Version 1.2 Draft
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+\section{Introduction}
+\subsection{Purpose}
+The purpose of this document is to detail the design of the Online Carpooling Service describing the functional workings of the database and code.
+
+\subsection{Objectives}
+The objectives are to describe the overall system and its workings
+
+\section{Database Structure}
+The decomposition of the database describes each of the tables and their attributes.
+\begin{description}
+\item[Person]:
+
+	\begin{description}
+	\item[ps\textunderscore email] character varying, not null, Primary Key
+	\item[ps\textunderscore first\textunderscore name] character varying, not null
+	\item[ps\textunderscore last\textunderscore name] character varying, not null
+	\item[ps\textunderscore password] character varying, not null
+	\item[ps\textunderscore home\textunderscore 1] character varying
+	\item[ps\textunderscore home\textunderscore 2] character varying
+	\item[ps\textunderscore frequent\textunderscore destination\textunderscore 1] character varying
+	\item[ps\textunderscore frequent\textunderscore destination\textunderscore 2] character varying
+	\item[ps\textunderscore frequent\textunderscore destination\textunderscore 3] character varying
+	\item[ps\textunderscore current\textunderscore location] character varying
+	\item[ps\textunderscore register\textunderscore date] date, not null, default = Now()
+	\end{description}
+	
+The 'Person' table holds the personal details of each of the website's users. the 'home\textunderscore 1' through to 'current\textunderscore location' are not required to be filled in upon registration to the site but are required if the user wishes to receive suggested journeys. The primary key in this table is the user's email address.
+	
+\item[Message]:
+
+	\begin{description}
+	\item[ms\textunderscore pk] big serial, not null, Primary Key
+	\item[ms\textunderscore ps\textunderscore sender] character varying, not null, references Person(ps\textunderscore email)
+	\item[ms\textunderscore ps\textunderscore receiver] character varying, not null, references Person(ps\textunderscore email)
+	\item[ms\textunderscore title] character varying
+	\item[ms\textunderscore body] character varying
+	\item[ms\textunderscore sent\textunderscore date] date time
+	\item[ms\textunderscore read\textunderscore date] date time
+	\end{description}
+	
+The 'Message' table hold all message information between the users on the site. The primary key is generated as the next available primary key in the table.
+	
+\item[Journey]:
+
+	\begin{description}
+	\item[jr\textunderscore pk] big serial, not null, primary key
+	\item[jr\textunderscore ps\textunderscore email] character varying, not null, references Person(ps\textunderscore email)
+	\item[jr\textunderscore origin] character varying, not null
+	\item[jr\textunderscore destination] character varying, not null
+	\item[jr\textunderscore etd] date time, not null
+	\item[jr\textunderscore eta] date time, not null
+	\item[jr\textunderscore spaces\textunderscore available] integer, not null
+	\item[jr\textunderscore total\textunderscore spaces] integer, not null
+	\item[jr\textunderscore description] character varying
+	\item[jr\textunderscore register\textunderscore date] date time, default = Now()
+	\item[jr\textunderscore extra\textunderscore distance] real, default = 30.0
+	\item[jr\textunderscore origin\textunderscore latitude] real, not null
+	\item[jr\textunderscore origin\textunderscore longitude] real, not null
+	\item[jr\textunderscore destination\textunderscore latitude] real, not null
+	\item[jr\textunderscore destination\textunderscore longitude] real, not null
+	\item[jr\textunderscore total\textunderscore distance] real, not null
+	\item[jr\textunderscore is\textunderscore cancelled] small integer, not null, default = 0
+	\end{description}
+	
+The 'Journey' table is responsible for storing the majority of information relating to a journey posted by a user. The primary key is generated as the next available integer in the table. 'jr\textunderscore ps\textunderscore email' refers to the entry in 'Person' table which posted the journey i.e. The driver of the journey.
+	
+\item[Journey\textunderscore Step]:
+
+	\begin{description}
+	\item[js\textunderscore pk] big serial, not null, primary key
+	\item[js\textunderscore jr] integer, not null, references Journey(jr\textunderscore pk)
+	\item[js\textunderscore step\textunderscore order] integer, not null
+	\item[js\textunderscore latitude] real, not null
+	\item[js\textunderscore longitude] real, not null
+	\end{description}
+	
+The 'Journey\textunderscore Step' table stores data regarding each step of journey. the primary key is generated as the next available integer primary key. The 'js\textunderscore jr' refers to the journey that the step belongs to by referencing the 'Journey' table's primary key. The 'js\textunderscore step\textunderscore order refers to the order of the step in the journey.
+
+\item[Journey\textunderscore Step\textunderscore Temp]:
+
+	\begin{description}
+	\item[st\textunderscore pk] integer, not null, primary key
+	\item[st\textunderscore jr] integer, not null, references Journey(jr\textunderscore pk)
+	\item[st\textunderscore step\textunderscore order] integer, not null
+	\item[st\textunderscore latitude] real, not null
+	\item[st\textunderscore longitude] real, not null
+	\end{description}
+	
+The 'Journey\textunderscore Step\textunderscore Temp' table is identical to the 'Journey\textunderscore Step' table except for the field names and the fact that the primary key is not generated, but rather inserted.
+	
+\item[Hitch\textunderscore Request]:
+
+	\begin{description}
+	\item[hr\textunderscore pk] big serial, not null, primary key
+	\item[hr\textunderscore jr] integer, not null, references Journey(jr\textunderscore pk)
+	\item[hr\textunderscore ps\textunderscore email] character varying, not null, references Person(ps\textunderscore email)
+	\item[hr\textunderscore request\textunderscore date] date time, not null, default = Now()
+	\item[hr\textunderscore response\textunderscore date] date time
+	\item[hr\textunderscore response] small integer
+	\item[hr\textunderscore waypoint\textunderscore 1] character varying
+	\item[hr\textunderscore waypoint\textunderscore 2] character varying
+	\end{description}
+	
+The 'Hitch\textunderscore Request' table stores data relating to a hitch request that a user makes to a journey. The primary key is generated as the next available integer in the field. 'hr\textunderscore jr' references the journey that is being requested to hitch. 'hr\textunderscore ps\textunderscore email' refers to the user that made the request by referencing the 'ps\textunderscore email' field in the 'Person' table.
+	
+\end{description}
+
+
+\section{PHP}
+\subsection{Overview}
+The client side application is split into two structures of PHP files. One group, called the 'Database Controller' will act as the gateway of interaction with the database. This structure is an object oriented representation of the database itself, with controller classes which perform the complex tasks that the client side website will utilize.
+
+The other group will be the website files. These files will be a collection of procedural PHP files which dynamically generate HTML data depending on the data received from the database controller classes.
+
+The design is almost a twisted version of Model-View-Controller, where the controllers ad the models are the database controller, and the view is the website files.
+
+\subsection{Database Controller}
+Each of the tables in the database has a corresponding PHP class, a 'model' class, in the database controller. Each of these classes representing a table contain attributes of the same names as its table counterpart, and overwrite four functions from the 'Table' class they extend. These functions are named 'Create()', 'Load()', 'Update()', 'Delete()'. 
+
+\begin{description}
+\item[Create()] inserts a new record into the corresponding table using an SQL procedure and the values that the class' attributes are set to.
+
+\item[Load()] takes a parameter as a string, and uses it as the primary key to the corresponding table to retrieve an entry from the table. If an entry is found, it will set the class' attributes equal to that of the corresponding values retrieved from the database.
+
+\item[Update()] updates the table using the attributes in the class, of which will include the primary key to the table being updated. This method assumes that changes have been made to the attributes in the class object before hand.
+
+\item[Delete()] attempts to delete a record from the table where the primary key matched the same attribute stored in the class object. It then resets the values of all of the attributes in the object in case the object is used again.
+ 
+\end{description}
+
+
+As well as each of the model classes, controller classes instantiate and control them. The model classes are structurally very similar with the only difference being which tables they represent. Controller classes are structured depending on how they make use of the model classes. The 'Journey\textunderscore Controller' class needs to perform many actions using the 'Journey' model class and interact with the 'Journey\textunderscore Step\textunderscore Controller', so there are far more methods in these classes that in the 'Message\textunderscore Controller' for example.
+
+\subsubsection{API.php}
+\begin{description}
+\item[\textunderscore \textunderscore construct()]
+\item[API()]
+\item[ConnectToDatabase()]
+\item[CloseConnection()]
+\item[Get()]
+\item[Set()]
+\item[GetAll()]
+\end{description}
+
+\subsubsection{Journey\textunderscore Controller.php} 
+extends 'API.php'
+\begin{description}
+\item[\textunderscore \textunderscore construct()]
+\item[Journey\textunderscore Controller()]
+\item[GetMyJourneys()]
+\item[Private ReturnJourneys()]
+\item[FillSpace()]
+\item[LoadJourney()]
+\item[GetJourneyDataAll()]
+\item[CancelJourney()]
+\item[SearchJourney()]
+\item[CreateJourney()]
+\item[CreateJourneySteps()]
+\item[ModifyJourneySteps()]
+\item[Private MoveOldJourneySteps()]
+\item[Private DeleteOldJourneySteps()]
+\item[SetWaypointArray()]
+\item[BuildDirectionsUrl()]
+\item[Geolocate()]
+\item[Private SetGeolocation()]
+\item[Private BuildSearchString()]
+\end{description}
+
+\subsubsection{Journey\textunderscore Step\textunderscore Controller.php}
+extends 'API.php'
+\begin{description}
+\item[\textunderscore \textunderscore construct()]
+\item[Journey\textunderscore Step\textunderscore Controller()]
+\item[MoveTempJourneySteps()]
+\item[DeleteTempJourneySteps()]
+\item[CreataeJourneySteps()]
+\end{description}
+
+\subsubsection{Message\textunderscore Controller.php}
+extends 'API.php'
+\begin{description}
+\item[\textunderscore \textunderscore construct()]
+\item[Message\textunderscore Controller()]
+\item[SendMessage()]
+\item[LoadMessage()]
+\item[LoadMyMessages()]
+\item[GetMessages()]
+\item[GetNumberOfUnreadMessages()]
+\end{description}
+
+\subsubsection{Hitch\textunderscore Request\textunderscore Controller.php}
+extends 'API.php'
+\begin{description}
+\item[\textunderscore \textunderscore construct()]
+\item[Hitch\textunderscore Request\textunderscore Controller()]
+\item[GetHitchRequestsForJourney()]
+\item[GetNewRequests()]
+\item[GetMyHitchRequests()]
+\item[Private ReturnHitchRequests()]
+\item[CreateHitchRequest()]
+\item[LoadHitchRequest()]
+\item[AcceptHitchRequest()]
+\item[DeclineHitchRequest()]
+\end{description}
+
+\subsection{Website}
+
+\end{document}
