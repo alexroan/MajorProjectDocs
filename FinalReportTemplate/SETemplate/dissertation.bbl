@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 \providecommand{\url}[1]{#1}
 \csname url@rmstyle\endcsname
 \providecommand{\newblock}{\relax}
@@ -28,12 +28,6 @@ Carpooling.com, ``Carpooling.com - online carpooling website,''
   \url{http://www.carpooling.co.uk/}, 2001.
 
 
-\bibitem{HannahsPaper}
-H.~M. Dee and D.~C. Hogg, ``Navigational strategies in behaviour modelling,''
-  \emph{Artificial Intelligence}, vol. 173(2), pp. 329--342, 2009.
- \begin{quotation}\noindent This is my annotation. I should add in a
-  description here. \end{quotation}
-
 \bibitem{gov_public_transport_doc}
 U.~G. Department~of Transport, ``Transport statistics great britain 2011,''
   \url{https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/11833/Transport_Statistics_Great_Britain_2011___all_chapters.pdf},
@@ -45,21 +39,11 @@ developers.google.com, ``Google directions api,''
   \url{https://developers.google.com/maps/documentation/directions/}, 2014.
  \begin{quotation}\noindent API used to retrieve routing data \end{quotation}
 
-\bibitem{kittenpic_ref}
-S.~Duckworth, ``{A picture of a kitten at Hellifield Peel},''
-  \url{http://www.geograph.org.uk/photo/640959}, 2007, copyright Sylvia
-  Duckworth and licensed for reuse under a Creative Commons Attribution-Share
-  Alike 2.0 Generic Licence. Accessed August 2011.
- \begin{quotation}\noindent This is my annotation. I should add in a
-  description here. \end{quotation}
-
-\bibitem{MarksPaper}
-M.~Neal, J.~Feyereisl, R.~Rascun\`{a}, and X.~Wang, ``{Don't touch me, I'm
-  fine: Robot autonomy using an artificial innate immune system},'' in
-  \emph{Proceedings of the 5th International Conference on Artificial Immune
-  Systems}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2006, pp.
-  349--361.
- \begin{quotation}\noindent This paper... \end{quotation}
+\bibitem{google_geocoding_api}
+------, ``Google geocoding api,''
+  \url{https://developers.google.com/maps/documentation/geocoding/}, 2014.
+ \begin{quotation}\noindent API used to retrieve location data using individual
+  place names \end{quotation}
 
 \bibitem{trainline_aber_cardiff_price}
 {The Train Line}, ``{TheTrainLine.com Train Times Booking. Aberystwyth -
@@ -69,12 +53,6 @@ M.~Neal, J.~Feyereisl, R.~Rascun\`{a}, and X.~Wang, ``{Don't touch me, I'm
  \begin{quotation}\noindent A query to thetrainline.com made by myself about
   the prices of train fair between Aberystwyth and Cardiff on the 1st of May
   2014 at 13:30. The price that was shown was \pounds 54.80. \end{quotation}
-
-\bibitem{FailBlog}
-Various, ``Fail blog,'' \url{http://www.failblog.org/}, Aug. 2011, accessed
-  August 2011.
- \begin{quotation}\noindent This is my annotation. I should add in a
-  description here. \end{quotation}
 
 \bibitem{guardian_fuel_prices}
 A.~Vial, ``Uk fuel price: how has it changed over time?''

@@ -34,7 +34,7 @@ You can conclude this section by reviewing the end of the implementation stage a
 
 The aim of the database design was to make the most simple design possible, which would still carry out the desired functions of the site. It was one of the main issues that contributed to the decision of using a traditional development methodology instead of an agile one. A full database Diagram can be found in the appendix.
 
-The database structure and relation underwent a slight change from the original idea. Originally, as the link between 'hitch_request' entries and 'journey' entries there was going to be a 'hitch' table, which simply stored the primary keys of both the 'hitch_request' entry and the related 'journey' entry. Instead, the 'hitch_request' table has an attribute called 'hr_jr', which stores the primary key of the entry in the 'journey' table that the hitch request relates to.
+The database structure and relation underwent a slight change from the original idea. Originally, as the link between 'hitch\textunderscore request' entries and 'journey' entries there was going to be a 'hitch' table, which simply stored the primary keys of both the 'hitch\textunderscore request' entry and the related 'journey' entry. Instead, the 'hitch\textunderscore request' table has an attribute called 'hr\textunderscore jr', which stores the primary key of the entry in the 'journey' table that the hitch request relates to.
 	
 \section{Database Controllers}
 	The database controllers refer to the group of object oriented classes that control data flow to and from the database. Initially, during the prototypes and early planning, this was the API that would be access via HTTP protocols from the website files. There were many deliberations over how this API or database controller would be structured.
@@ -47,17 +47,17 @@ As stated in the requirements, one of the most important aspects of the project 
 Once the serach function had been developed and was working correctly: returning journeys which not only started and ended at the searched locations, but journeys which passed through such searched locations; the hitch request was subject to acceptance or denial by the driver of the journey. If the driver acceptede the hitch and it involved only a part of the full journey, the journey steps needed to be modified in the database to include the new waypoints. The management of journey steps in the database and PHP database controller classes proved quite difficult, but was evetually accomplished by the communication between controller classes. The acceptance of hitch requests follow these steps:
 
 \begin{itemize}
-\item Move current journey steps relating to journey into 'journey_step_temp' table
-\item Retrieve all accepted hitch requests for journey from 'hitch_request' table
+\item Move current journey steps relating to journey into 'journey\textunderscore step\textunderscore temp' table
+\item Retrieve all accepted hitch requests for journey from 'hitch\textunderscore request' table
 \item Use the origin, destination and waypoints from the accepted hitch requests to retrieve new route data from google directions API
 \item Parse the resulting json into journey steps
-\item Insert the new journey steps into the 'journey_step' table
+\item Insert the new journey steps into the 'journey\textunderscore step' table
 \item Change the reponse to the hitch request to True
 \item Decrement the amount of spaces left on the journey
-\item Delete the old journey steps from the 'journey_step_temp' table
+\item Delete the old journey steps from the 'journey\textunderscore step\textunderscore temp' table
 \end{itemize}
 
-Provided a more generous timescale, I would have included a feature counting the spaces available during each part of the journey. For example, adding a 'js_spaces_available' field to the 'journey_step' table to account for pick ups and drop off decrementing and incrementing the spaces left as the journey travels along the route.
+Provided a more generous time-scale, I would have included a feature counting the spaces available during each part of the journey. For example, adding a 'js\textunderscore spaces\textunderscore available' field to the 'journey\textunderscore step' table to account for pick ups and drop off decrementing and incrementing the spaces left as the journey travels along the route.
 	
 \section{Website}
 	Communication with the API started as a JSON interface over HTTP post. This proved to be little more than an over-separation of the two structures and over complication of the design. The development of the website did take some time, but once the foundations of the database controller classes were laid down, it was simply a case of developing the website files which would make use of them.
