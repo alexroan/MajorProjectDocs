@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{#1}
 \csname url@rmstyle\endcsname
 \providecommand{\newblock}{\relax}
@@ -18,22 +18,27 @@
 \fi
 #2}}
 
-\bibitem{apache_poi}
-{Apache Software Foundation}, ``{Apache POI - the Java API for Microsoft
-  Documents},'' \url{http://poi.apache.org}, 2014.
- \begin{quotation}\noindent This is my annotation. I should add in a
-  description here. \end{quotation}
+\bibitem{blabla}
+BlaBlaCar.com, ``Blablacar.com - online carpooling website,''
+  \url{http://www.blablacar.com/}, 2014.
+
 
 \bibitem{carpooling_com}
-Carpooling.com, ``Carpooling.com - existing online carpooling service,''
+Carpooling.com, ``Carpooling.com - online carpooling website,''
   \url{http://www.carpooling.co.uk/}, 2001.
- \begin{quotation}\noindent Existing carpooling website \end{quotation}
+
 
 \bibitem{HannahsPaper}
 H.~M. Dee and D.~C. Hogg, ``Navigational strategies in behaviour modelling,''
   \emph{Artificial Intelligence}, vol. 173(2), pp. 329--342, 2009.
  \begin{quotation}\noindent This is my annotation. I should add in a
   description here. \end{quotation}
+
+\bibitem{gov_public_transport_doc}
+U.~G. Department~of Transport, ``Transport statistics great britain 2011,''
+  \url{https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/11833/Transport_Statistics_Great_Britain_2011___all_chapters.pdf},
+  p.~4, 2011.
+
 
 \bibitem{google_directions_api}
 developers.google.com, ``Google directions api,''
@@ -56,16 +61,25 @@ M.~Neal, J.~Feyereisl, R.~Rascun\`{a}, and X.~Wang, ``{Don't touch me, I'm
   349--361.
  \begin{quotation}\noindent This paper... \end{quotation}
 
+\bibitem{trainline_aber_cardiff_price}
+{The Train Line}, ``{TheTrainLine.com Train Times Booking. Aberystwyth -
+  Cardiff},''
+  \url{http://www.thetrainline.com/buytickets/combinedmatrix.aspx?Command=TimeTable#Journey/AYW/CDF/01/05/14/13/0/Dep//////Dep/1/0//0;0;0},
+  2014.
+ \begin{quotation}\noindent A query to thetrainline.com made by myself about
+  the prices of train fair between Aberystwyth and Cardiff on the 1st of May
+  2014 at 13:30. The price that was shown was \pounds 54.80. \end{quotation}
+
 \bibitem{FailBlog}
 Various, ``Fail blog,'' \url{http://www.failblog.org/}, Aug. 2011, accessed
   August 2011.
  \begin{quotation}\noindent This is my annotation. I should add in a
   description here. \end{quotation}
 
-\bibitem{gov_public_transport_doc}
-www.gov.co.uk, ``Transport statistics great britain 2011,''
-  \url{https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/11833/Transport_Statistics_Great_Britain_2011___all_chapters.pdf},
-  p.~4, 2011.
+\bibitem{guardian_fuel_prices}
+A.~Vial, ``Uk fuel price: how has it changed over time?''
+  \url{http://www.theguardian.com/news/datablog/2012/nov/12/uk-fuel-price-over-time},
+  2012.
 
 
 \end{thebibliography}

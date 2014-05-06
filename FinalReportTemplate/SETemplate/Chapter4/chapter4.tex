@@ -7,13 +7,71 @@ Have you tested your system on ’real users’? For example, if your system is supp
 The following sections indicate some areas you might include. Other sections may be more appropriate to your project. 
 
 \section{Overview}
-\section{Database API Testing}
-	\subsection{Overview?}
+
+Testing was performed in the following ways. The main strategies I have used involve feature testing against the original requirements and performing PHPUnit tests on the Database controller classes. The outputs of which can be viewed in the appendix.
+
+\section{Database Controller Testing}
+	\subsection{Overview}
+		The testing for the database controller was done by unit testing the model and controller classes. The feature testing of the database controller was performed during the feature testing of the website during use. Each feature described in the project specification (Appendix) was tested as a feature
+
 	\subsection{Unit Tests}
-	\subsection{Functional Tests}
+		PHPUnit tests were written for the testing of the model classes which represent tables in the database. The reason for this was to ensure that data was being transferred and handled correctly to and from the database into the model classes. The CRUD methods in each model class in the database controller needed to work perfectly for the higher level functions in the corresponding controller class functioned properly. 
+
+		Each model class, 'Person.php', 'Message.php', 'Journey.php', 'Journey\textunderscore Step.php' and 'Hitch\textunderscore Request.php' were tested for their 'Create()', 'Load()', 'Update()' and 'Delete()' methods to ensure that data was being parsed correctly. The model tests followed the following steps to test these functions:
+
+\begin{description}
+\item[Instanciate] Instanciating the object and set the attributes to desired values
+\item[Create()] Use the atribute values to insert a new record into the database table via the 'Create()' method in the class.
+\item[Load()] Use the 'Load()' method to retrieve the new entry in the table and assert the retrieved values are equal to the initial attribute values used to insert into the database table.
+\item[Update()] Change one of the attributes in the model class and use 'Update()' to update the entry in the database table with the new attribute values and assert that the new retrieved values are equal to that of the updated ones in the class.
+\item[Delete()] Use delete to remove the entry in the database table and assert that the action returns true.
+\end{description}
+
+As well as the testing of the model classes, the controller classes have each been tested for their individual functions to ensure that they are utilizing the database table model classes correctly. The results of all of these can be seen in the appendix.
+
 \section{Website Testing}
 	\subsection{Overview}
+		The website testing was performed by following the fnctional requirements set out in the project specification document compiled at the beginning of the project. The full feature test results table can be found in the appendix.
 	\subsection{Functional Tests}
+		The functional tests of the website are high level functional requirements that involve all sections of the project. The basic results are as follows:
+
+\begin{tabular}{| l | p{9cm} | r |}
+\hline
+Test Code & Description & Result \\
+\hline
+FR.I.01 & Register Form - The page must provide an easy to access register form for personal details to be entered upon registration. Basic details needed are Email address, First name, Last name and Password. More specific details can be entered after registering to the site & Pass \\
+\hline
+FR.I.02 & Log in Form - There must be a section of the page dedicated to logging in existing users. It must be easily viewed and apparent to users. & Pass \\
+\hline
+FR.H.01 & Menu - There should be a menu giving the user access to all of the site's functions separated out into pages that group functionality & Pass \\
+\hline
+FR.H.02 & Logout - A logout option must be present & Pass \\
+\hline
+FR.H.03 & User Journeys - Users must be able to see a list of their shared journeys and view their status. This could show how many spaces they have left and new requests others have made to hitch the journeys & Pass \\
+\hline
+FR.H.04 & User Hitches - User must be able to view a list of the hitches they have requested to other journeys and view their status. The status of the hitch request depends on whether or not it has been accepted by the driver & Pass \\
+\hline
+FR.H.05 & Post Journey - The user must be able to share journeys by posting the details of the journey up on the page. the site must provide a map-style preview of the journey so that the user can be sure the correct origin and destination have been set & Pass \\
+\hline
+FR.H.06 &Search For Journeys - The site must provide a search function for the user to find journeys from one location to another. This search function must include date parameters & Pass \\
+\hline
+FR.H.07 & Make a Hitch Request - If a user a selected a journey after searching, they must be able to make a hitch request provided there are spaces remaining & Pass \\
+\hline
+FR.H.08 &  Accept/Decline Hitch Requests - When another user requests to hitch a journey that a user has shared, the site must prompt them to accept or decline the new hitcher & Pass \\
+\hline
+FR.H.09 & Suggested Journeys - The site must provide suggested journeys that it predicts a user may be interested in due to their profile details & Pass \\
+\hline
+FR.H.10 & Messages - The ability to send and receive messages to and from other users on the site must be available & Pass \\
+\hline
+FR.H.11 & Profile - The user must be able to view and edit their personal and profile details & Pass \\
+\hline
+FR.H.12 & Journey Cancelling - The user must be able to cancel a journey at any time & Pass \\
+\hline
+FR.H.06.01 & Distance Search - The search function must search not only for journeys which originate and terminate at the exact searched locations, but must return journeys which originate and terminate at locations near to that of the search. For example, within ten kilometres & Pass \\
+\hline
+FR.H.06.01 & Partial Journey Search - The search function must return journeys in which the searched origin and destination are, or near to (see FR.H.06.01), points along the journey & Pass \\
+\hline
+\end{tabular}
 
 %\section{Overall Approach to Testing}
 

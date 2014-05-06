@@ -39,23 +39,22 @@
 \contentsline {section}{\numberline {3.7}Website}{15}
 \contentsline {chapter}{\numberline {4}Testing}{16}
 \contentsline {section}{\numberline {4.1}Overview}{16}
-\contentsline {section}{\numberline {4.2}Database API Testing}{16}
-\contentsline {subsection}{\numberline {4.2.1}Overview?}{16}
+\contentsline {section}{\numberline {4.2}Database Controller Testing}{16}
+\contentsline {subsection}{\numberline {4.2.1}Overview}{16}
 \contentsline {subsection}{\numberline {4.2.2}Unit Tests}{16}
-\contentsline {subsection}{\numberline {4.2.3}Functional Tests}{16}
-\contentsline {section}{\numberline {4.3}Website Testing}{16}
-\contentsline {subsection}{\numberline {4.3.1}Overview}{16}
-\contentsline {subsection}{\numberline {4.3.2}Functional Tests}{16}
-\contentsline {chapter}{\numberline {5}Evaluation}{17}
-\contentsline {section}{\numberline {5.1}Original Goals}{18}
-\contentsline {section}{\numberline {5.2}Accomplishments}{18}
-\contentsline {section}{\numberline {5.3}Future Improvements}{18}
-\contentsline {section}{\numberline {5.4}Future Development}{18}
-\contentsline {section}{\numberline {5.5}Design Choices}{18}
-\contentsline {section}{\numberline {5.6}Approach}{18}
-\contentsline {chapter}{Appendices}{19}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{20}
-\contentsline {chapter}{\numberline {B}Code samples}{21}
-\contentsline {chapter}{\numberline {C}Development Process Documentation}{22}
-\contentsline {chapter}{\numberline {D}Design Diagrams}{23}
-\contentsline {chapter}{Annotated Bibliography}{24}
+\contentsline {section}{\numberline {4.3}Website Testing}{17}
+\contentsline {subsection}{\numberline {4.3.1}Overview}{17}
+\contentsline {subsection}{\numberline {4.3.2}Functional Tests}{17}
+\contentsline {chapter}{\numberline {5}Evaluation}{19}
+\contentsline {section}{\numberline {5.1}Original Goals}{20}
+\contentsline {section}{\numberline {5.2}Accomplishments}{20}
+\contentsline {section}{\numberline {5.3}Future Improvements}{20}
+\contentsline {section}{\numberline {5.4}Future Development}{20}
+\contentsline {section}{\numberline {5.5}Design Choices}{20}
+\contentsline {section}{\numberline {5.6}Approach}{20}
+\contentsline {chapter}{Appendices}{21}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{22}
+\contentsline {chapter}{\numberline {B}Code samples}{23}
+\contentsline {chapter}{\numberline {C}Development Process Documentation}{24}
+\contentsline {chapter}{\numberline {D}Design Diagrams}{25}
+\contentsline {chapter}{Annotated Bibliography}{26}

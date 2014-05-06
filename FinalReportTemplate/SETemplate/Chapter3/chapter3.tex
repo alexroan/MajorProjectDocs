@@ -31,13 +31,17 @@ You can conclude this section by reviewing the end of the implementation stage a
 	If a journey from 'Aberystwyth' to 'Bristol' routed through 'Brecon' and 'Cardiff', A search for a journey between 'Brecon' and 'Cardiff' would need to return that journey. The Geocoding API was used to retrieve the geographical location in the form of latitude and longitude of the two search locations. These locations could then be used to search not only through the 'Journey' table, which stores the latitude and longitude of the origin and destination, but also through the 'Journey\textunderscore Step' table, which holds the latitudes and longitudes of journey steps of each step on each journey. This enables the search to retrieve larger journeys of partial routes.
 	
 \section{Database}	
+
+The aim of the databas
+
+The database structure and relation underwent a slight change from the original idea. Originally, as the link between 'hitch_request' entries and 'journey' entries there was going to be a 'hitch' table, which simply stored the primary keys of both the 'hitch_request' entry and the related 'journey' entry. Instead, the 'hitch_request' table has an attribute called 'hr_jr', which stores the primary key of the entry in the 'journey' table that the hitch request relates to.
 	
 \section{Database Controllers}
 	The database controllers refer to the group of object oriented classes that control data flow to and from the database. Initially, during the prototypes and early planning, this was the API that would be access via HTTP protocols from the website files. There were many deliberations over how this API or database controller would be structured.
 	
 	At first there were prototypes developed which were entirely procedural. They would accept JSON via HTTP post and deal with it by decoding it and parse the data to the required specific function which would encode the result. This worked very well in early testing but began to cause a lot of problems when it came to refactoring or adding attempting to add new or edit existing features.
 	
-	Eventually, the development of the current form of interface came to be. In MVD terms, the Model and the Controllers are bunched together, with the website files acting as the View.
+	Eventually, the development of the current form of interface came to be. In MVC terms, the Model and the Controllers are bunched together, with the website files acting as the View.
 	
 \section{Website}
 	Communication with the API started as a JSON interface over HTTP post. This proved to be little more than an over-separation of the two structures and over complication of the design. The development of the website did take some time, but once the foundations of the database controller classes were laid down, it was simply a case of developing the website files which would make use of them.
