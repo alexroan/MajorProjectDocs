@@ -52,7 +52,7 @@ The 'Person' table holds the personal details of each of the website's users. th
 	\item[ms\textunderscore read\textunderscore date] date time
 	\end{description}
 	
-The 'Message' table hold all message information between the users on the site. The primary key is generated as the next available primary key in the table.
+The 'Message' table holds all message information between the users on the site. The primary key is generated as the next available primary key in the table.
 	
 \item[Journey]:
 
@@ -122,11 +122,11 @@ The 'Hitch\textunderscore Request' table stores data relating to a hitch request
 
 \section{PHP}
 \subsection{Overview}
-The client side application is split into two structures of PHP files. One group, called the 'Database Controller' will act as the gateway of interaction with the database. This structure is an object oriented representation of the database itself, with controller classes which perform the complex tasks that the client side website will utilize.
+The client side application is split into two structures of PHP files. One group, called the 'Database Controller' acts as the gateway of interaction with the database. This structure is an object oriented representation of the database itself, with controller classes which perform the complex tasks that the client side website utilizes.
 
-The other group will be the website files. These files will be a collection of procedural PHP files which dynamically generate HTML data depending on the data received from the database controller classes.
+The other group will be the website files. These files are a collection of procedural PHP files which dynamically generate HTML data depending on the data received from the database controller classes.
 
-The design is almost a twisted version of Model-View-Controller, where the controllers ad the models are the database controller, and the view is the website files.
+The design is almost a tweaked version of Model-View-Controller, where the controllers and the models are the database controller, and the view is comprised of the website files.
 
 \subsection{Database Controller}
 Each of the tables in the database has a corresponding PHP class, a 'model' class, in the database controller. Each of these classes representing a table contain attributes of the same names as its table counterpart, and overwrite four functions from the 'Table' class they extend. These functions are named 'Create()', 'Load()', 'Update()', 'Delete()'. 
@@ -143,7 +143,7 @@ Each of the tables in the database has a corresponding PHP class, a 'model' clas
 \end{description}
 
 
-As well as each of the model classes, controller classes instantiate and control them. The model classes are structurally very similar with the only difference being which tables they represent. Controller classes are structured depending on how they make use of the model classes. The 'Journey\textunderscore Controller' class needs to perform many actions using the 'Journey' model class and interact with the 'Journey\textunderscore Step\textunderscore Controller', so there are far more methods in these classes that in the 'Message\textunderscore Controller' for example.
+As well as each of the model classes, controller classes instantiate and control them. The model classes are structurally very similar to each other with the only difference being which tables / model classes they represent. Controller classes are structured depending on how they make use of the model classes. The 'Journey\textunderscore Controller' class needs to perform many actions using the 'Journey' model class and interact with the 'Journey\textunderscore Step\textunderscore Controller', so there are far more methods in these classes that in the 'Message\textunderscore Controller' for example.
 
 \subsubsection{API.php}
 
@@ -222,7 +222,7 @@ extends 'API.php'
 
 \subsection{Website}
 
-The website files will be the files that are accessed by the user when interacting with the website. They comprise of 7 main files which display the main features of the site. These files are as follows:
+The website files are the files that are accessed by the user when interacting with the website. They comprise of 7 main files which display the main features of the site. These files are as follows:
 
 \begin{description}
 \item[index.php] The main page that the user comes to when accessing the site. Has a register form and a log in form on it.
