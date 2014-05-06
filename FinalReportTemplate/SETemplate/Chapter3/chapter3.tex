@@ -12,7 +12,7 @@ You can conclude this section by reviewing the end of the implementation stage a
 \section{PHP}
 	A few languages were considered for this project, these include Ruby, Python and Perl. Perl was the first to be discarded. This was mainly due to its performance and usability when used in an Object Oriented fashion. Ruby with Ruby of Rails provides a very stable platform to develop upon, but does not quite have the flexibility that I intended to yield in the development. The final decision came between Python and PHP. Python is a clean language with very good performance and is easy to use. However, the flexibility that PHP provides when developing web pages and its good Object Oriented capabilities meant that I sided with it even though its performance may not be as good as Python.
 	
-	The implementation of the PHP application began based on the principle that the website files generating the HTML and JavaScript output for the interface would be completely separate from the API / database control type structure that would control all access to the database. Both would be developed in PHP and would use some form or many forms of HTTP protocol to transfer between the two. During the implementation stage, prototypes were developed which made use of HTTP Post to post JSON test data across from a mock website to an API which handled the database. Although this worked, it started to seem slightly pointless separating the two so much. If the user interface was a mobile based application, an API would need to be developed in order for the application to access the database. The website however, did not to be entirely separated from the API which would mean all interaction would have to be done via HTTP protocols. Instead, while the website files are located away from the database controller files, the website files do have access to the controller classes so that functions inside the controller classes can be called upon by the website files. 
+	The implementation of the PHP application began based on the principle that the website files generating the HTML and JavaScript output for the interface would be completely separate from the API / database control type structure that would control all access to the database. Both would be developed in PHP and would use some form or many forms of HTTP protocol to transfer between the two. During the implementation stage, prototypes were developed which made use of HTTP Post to post JSON test data across from a mock website to an API which handled the database. Although this worked, it started to seem slightly pointless separating the two so much. If the user interface was a mobile based application, an API would need to be developed in order for the application to access the database. The website however, did not to be entirely separated from the API, and if it was it would mean that all interaction would have to be done via HTTP protocols. Instead, while the website files are located seperately from the database controller files, the website files do have access to the controller classes so that functions inside the controller classes can be called upon by the website files. 
 	
 \section{Google Directions API}
 	Google Directions API was considered the most applicable API for generating the journey steps that were needed to store for each of the journeys. Implementing the use of this API within the application proved to be a bit of a struggle when parsing the output retrieved from the API. But once the layers of arrays were mastered, slotting the desired information into the database tables came quickly after. 
@@ -32,18 +32,37 @@ You can conclude this section by reviewing the end of the implementation stage a
 	
 \section{Database}	
 
-The aim of the databas
+The aim of the database design was to make the most simple design possible, which would still carry out the desired functions of the site. It was one of the main issues that contributed to the decision of using a traditional development methodology instead of an agile one. A full database Diagram can be found in the appendix.
 
 The database structure and relation underwent a slight change from the original idea. Originally, as the link between 'hitch_request' entries and 'journey' entries there was going to be a 'hitch' table, which simply stored the primary keys of both the 'hitch_request' entry and the related 'journey' entry. Instead, the 'hitch_request' table has an attribute called 'hr_jr', which stores the primary key of the entry in the 'journey' table that the hitch request relates to.
 	
 \section{Database Controllers}
 	The database controllers refer to the group of object oriented classes that control data flow to and from the database. Initially, during the prototypes and early planning, this was the API that would be access via HTTP protocols from the website files. There were many deliberations over how this API or database controller would be structured.
 	
-	At first there were prototypes developed which were entirely procedural. They would accept JSON via HTTP post and deal with it by decoding it and parse the data to the required specific function which would encode the result. This worked very well in early testing but began to cause a lot of problems when it came to refactoring or adding attempting to add new or edit existing features.
-	
-	Eventually, the development of the current form of interface came to be. In MVC terms, the Model and the Controllers are bunched together, with the website files acting as the View.
+	At first there were prototypes developed which were entirely procedural. They would accept JSON via HTTP post and deal with it by decoding it and parse the data to the required specific function which would encode the result. This worked very well in early testing but began to cause a lot of problems when it came to refactoring or adding attempting to add new or edit existing features. Eventually, the development of the current form of interface came to be. In MVC terms, the Model and the Controllers are bunched together, with the website files acting as the View.
+
+\subsection{Searching and Hitching Journeys}
+As stated in the requirements, one of the most important aspects of the project was to produce a search which not only returned journeys which matched origin and destinations, but returned journeys which passed through places that were being serached. As explained in the 'Google Directions API' section of this chapter, the Google Directions API was used to store journey steps as well as journeys. This part of the functionality proved to be the most difficult to get right.
+
+Once the serach function had been developed and was working correctly: returning journeys which not only started and ended at the searched locations, but journeys which passed through such searched locations; the hitch request was subject to acceptance or denial by the driver of the journey. If the driver acceptede the hitch and it involved only a part of the full journey, the journey steps needed to be modified in the database to include the new waypoints. The management of journey steps in the database and PHP database controller classes proved quite difficult, but was evetually accomplished by the communication between controller classes. The acceptance of hitch requests follow these steps:
+
+\begin{itemize}
+\item Move current journey steps relating to journey into 'journey_step_temp' table
+\item Retrieve all accepted hitch requests for journey from 'hitch_request' table
+\item Use the origin, destination and waypoints from the accepted hitch requests to retrieve new route data from google directions API
+\item Parse the resulting json into journey steps
+\item Insert the new journey steps into the 'journey_step' table
+\item Change the reponse to the hitch request to True
+\item Decrement the amount of spaces left on the journey
+\item Delete the old journey steps from the 'journey_step_temp' table
+\end{itemize}
+
+Provided a more generous timescale, I would have included a feature counting the spaces available during each part of the journey. For example, adding a 'js_spaces_available' field to the 'journey_step' table to account for pick ups and drop off decrementing and incrementing the spaces left as the journey travels along the route.
 	
 \section{Website}
 	Communication with the API started as a JSON interface over HTTP post. This proved to be little more than an over-separation of the two structures and over complication of the design. The development of the website did take some time, but once the foundations of the database controller classes were laid down, it was simply a case of developing the website files which would make use of them.
 	
 	The use of the Bootstrap CSS library really helped the development of the website. Simplicity was key and Bootstrap steered the site towards a formalised visual structure so that each page seemed to appear structurally identical to the last. It was also very easy to maintain and manage when needing to change the look of things on a page.
+
+\section{Review}
+	All of the basic requirements of the project were fulfilled in the end. However, more requirements would have been introduced had the timespan of the project been greater. This would have made the project much more usable and encourage more users to join up had they been introduced.

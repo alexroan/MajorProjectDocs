@@ -1,16 +1,4 @@
 \chapter{Background \& Objectives}
-
-This section should discuss your preparation for the project, including background reading, your analysis of the problem and the process or method you have followed to help structure your work.  It is likely that you will reuse part of your outline project specification, but at this point in the project you should have more to talk about. 
-
-\textbf{Note}: 
-
-\begin{itemize}
-   \item All of the sections and text in this example are for illustration purposes. The main Chapters are a good starting point, but the content and actual sections that you include are likely to be different.
-   
-   \item Look at the document on the Structure of the Final Report for additional guidance. 
-   
-\end {itemize}
-
 \section{Background}
 \subsection{Overview}
 As a student studying in a university away from home, I have often needed to travel back home during the holidays or on weekends. My motivation for this project comes from the requirement that many people have to travel frequently from one place to another. 
@@ -46,46 +34,53 @@ A one way train ticket between Aberystwyth and Cardiff costs around \pounds 54.8
 	There are existing websites that offer the same sort of carpooling service. The leading services are Carpooling.com \cite{carpooling_com} and BlaBlaCar \cite{blabla}. These sites provide a platform for people to offer rides to other people needing to travel in similar directions.
 	
 	\begin{description}
-	\item[Carpooling.com] This is a worldwide service which offers registered users the chance to share rides to other users
+	\item[Carpooling.com] This is a worldwide service which offers registered users the chance to share rides to other users.
+	\item[Blablacar.com] BlaBlaCar is the largest car sharing network in Europe and rates users on their experience usign the site.
 	\end{description}
 	
 
 \section{Analysis}
-Taking into account the problem and what you learned from the background work, what was your analysis of the problem? How did your analysis help to decompose the problem into the main tasks that you would undertake? Were there alternative approaches? Why did you choose one approach compared to the alternatives? 
-
-There should be a clear statement of the objectives of the work, which you will evaluate at the end of the work. 
-
-In most cases, the agreed objectives or requirements will be the result of a compromise between what would ideally have been produced and what was felt to be possible in the time available. A discussion of the process of arriving at the final list is usually appropriate.
 
 \subsection{Original Goals}
-	The original goals of the project were to produce an online service that enables people to share journeys with people who are looking to travel to and from similar locations or locations along the route of the driver. 
-	
-	This would enable the users to reduce the cost of the journeys by sharing the cost of fuel.
+	The original goals of the project were to produce an online service that enables people to share journeys with people who are looking to travel to and from similar locations or locations along the route of the driver, this was the key marker as to the success of the project. The service must recognise when two locations in a search lie along the route of a journey already with different origin and destination, not just recognise the searched origin and destination as the beginning and end of a journey. In other words, the service must account for picking people up and dropping people off at any point in the journey.
+
+The most important goals of the project are as follows:
 	
 \subsection{Requirements}
-Enable users to:
 \begin{itemize}
-\item FR1 - Register to the site
-\item FR2 - Log in if an existing member
-\item FR3 - Post new journeys  to the site, offering spare spaces
-\item FR4 - Search for a journey between two locations
-\item FR5 - Request to join a journey offered by another user
-\item FR6 - Accept a hitcher requesting to join a journey
-\item FR7 - Decline a hitcher requesting to join a journey
-\item FR8 - Suggest journeys depending on preferences
-\item FR9 - Cancel a journey
-\item FR10 - Send messages to other users
+\item Register as a new user to the site
+\item Log in with existing details
+\item Edit profile details
+\item Post a Journey that the user will be driving from location to location
+\item Search for journeys between two locations. The search must return journeys in which the searched location appear along some points on the journeys.
+\item Request to Hitch a journey as a passenger
+\item Accept or decline a hitcher as the driver
+\item Send messages to other users on the site
 \end{itemize}
 
-\section{Process}
+Ideally, provided a more extensive time period, the requirements would involve more in-depth services. These include the like of integration with social networking sites and the introduction of interoperability such as OAuth\cite{outh} to extract data from existing user account to different services. Unfortunately, time restrictions and priority on the main purpose of the project meant that these features were omitted from the initial requirements stage.
 
+\section{Process}
 \subsection{Overview}
+Planning and research was performed before the implementation of this project. Before the development could begin, the method in which to develop needed to be estblished. There were a few methodologies considered, detailed in the Methodology section of this chapter.
+
+Reserach into the types of technologies I needed to use was also required, prompting reading into APIs, code libraries and programming languages. These are detailed in the Planning and Research sections of this chapter.
 
 \subsection{Methodology}
-I have chosen to use the Waterfall Model as the methodology for this project. The reason for this is that this project was of my own design, meaning that the requirements of it were known from the very beginning and were very unlikely to change. 
-\subsection{Planning}
+Agile methodologies were considered for the development of this project. The decision lied mainly between choosing Feature Driven Development (FDD) along with Test Driven Development (TDD) as the method of developing the site, or using the more structured Waterfall method of development. There were pros and cons to both of these methods. 
+
+Feature Driven Development would allow a very flexible environment in which to develop each feature iteratively, without much thought into future architecture. Although this would account for any future changes in specification or problems encountered during the implementation stage, I did not feel as though it would suit the development of the site. This is due to the lack or architectural planning involved in agile methodologies such as FDD. I feel that a project as reliant on its data storage method such as this requires more thought towards the design of such data storage methods. A tweaked version of FDD was still an option, allowing for a plan and design of the database, with the incremental development of each of the features implemented over time using the original database design which would be developed first. This however, defeats the object of agile development because it would not really allow for any future changes due to the architecture being set in stone from the beginning.
+
+The Waterfall methodology requires that specifications and design are compiled well before implementation begins, and I feel that this suited the project more. The architecture of the database, and program controlling data flow to and from it, could be planned in advance and implemented within a short period of time. Although this did not account much for future changes, the architecture would follw a strict design rather than be developed on the fly, resulting in a more normalised relational database.
 
 \subsection{Research}
 The vast majority of this service depends on its ability to recognise, locate and route directions from an origin to a destination. It was clear from the beginning that either a routing algorithm was needed to be developed using real map data, or an existing or multiple existing APIs needed to be utilized to produce routing data that could be saved locally to the site's database for processing. 
 
-The APIs that were looked into were the Google Directions API \cite{google_directions_api} and the Google Geocoding API. 
+Google Directions API\cite{google_directions_api} was found to be a valuable asset in the projects development. Using it enables routes to be created from an origin, destination and waypoints; perfect for the types of requests that this project will need to make. 
+
+Another valuable API that was researched was the Google Geocoding API\cite{google_geocoding_api}. This API returns the geographical location in latitude and longitude of any place name given as a parameter, useful when searching using the geographical location of places along the route of journeys.
+
+\subsection{Planning}
+The planning that was carried out followed that of the requirements of the Waterfall development methodology. Initially, a project specification document was developed to outline the requirements of the project. Once they had been established, the design of the project began to develop, resulting in some basic UML diagrams describing the database structure and website. The Waterfall process deviated slightly from its normally strict processes here where a few prototypes were developed to test out some of the design theories compiled during the design stage. Any issues or flaws in the design were corrected at this stage, enabling for the smoothest implementation possible.
+
+
