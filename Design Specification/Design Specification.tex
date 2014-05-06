@@ -146,25 +146,28 @@ Each of the tables in the database has a corresponding PHP class, a 'model' clas
 As well as each of the model classes, controller classes instantiate and control them. The model classes are structurally very similar with the only difference being which tables they represent. Controller classes are structured depending on how they make use of the model classes. The 'Journey\textunderscore Controller' class needs to perform many actions using the 'Journey' model class and interact with the 'Journey\textunderscore Step\textunderscore Controller', so there are far more methods in these classes that in the 'Message\textunderscore Controller' for example.
 
 \subsubsection{API.php}
+
+All classes in the database controller classes extend 'API.php'
+
 \begin{description}
-\item[\textunderscore \textunderscore construct()]
-\item[API()]
+\item[\textunderscore \textunderscore construct()] constructor
+\item[API()] constructor
 \item[ConnectToDatabase()]
 \item[CloseConnection()]
 \item[Get()]
 \item[Set()]
-\item[GetAll()]
+\item[GetAll()] Returns All attributes from an object
 \end{description}
 
 \subsubsection{Journey\textunderscore Controller.php} 
 extends 'API.php'
 \begin{description}
-\item[\textunderscore \textunderscore construct()]
-\item[Journey\textunderscore Controller()]
-\item[GetMyJourneys()]
-\item[Private ReturnJourneys()]
-\item[FillSpace()]
-\item[LoadJourney()]
+\item[\textunderscore \textunderscore construct()] constructor
+\item[Journey\textunderscore Controller()] constructor
+\item[GetMyJourneys()] 
+\item[Private ReturnJourneys()] Function used by other functions in the class to format the return structure as an array
+\item[FillSpace()] Fills a space in a journey, decrements the amount of spaces available for a particular journey
+\item[LoadJourney()] Loads a journey object to the controller
 \item[GetJourneyDataAll()]
 \item[CancelJourney()]
 \item[SearchJourney()]
@@ -183,8 +186,8 @@ extends 'API.php'
 \subsubsection{Journey\textunderscore Step\textunderscore Controller.php}
 extends 'API.php'
 \begin{description}
-\item[\textunderscore \textunderscore construct()]
-\item[Journey\textunderscore Step\textunderscore Controller()]
+\item[\textunderscore \textunderscore construct()] constructor
+\item[Journey\textunderscore Step\textunderscore Controller()] constructor
 \item[MoveTempJourneySteps()]
 \item[DeleteTempJourneySteps()]
 \item[CreataeJourneySteps()]
@@ -193,8 +196,8 @@ extends 'API.php'
 \subsubsection{Message\textunderscore Controller.php}
 extends 'API.php'
 \begin{description}
-\item[\textunderscore \textunderscore construct()]
-\item[Message\textunderscore Controller()]
+\item[\textunderscore \textunderscore construct()] constructor
+\item[Message\textunderscore Controller()] constructor
 \item[SendMessage()]
 \item[LoadMessage()]
 \item[LoadMyMessages()]
@@ -205,8 +208,8 @@ extends 'API.php'
 \subsubsection{Hitch\textunderscore Request\textunderscore Controller.php}
 extends 'API.php'
 \begin{description}
-\item[\textunderscore \textunderscore construct()]
-\item[Hitch\textunderscore Request\textunderscore Controller()]
+\item[\textunderscore \textunderscore construct()] constructor
+\item[Hitch\textunderscore Request\textunderscore Controller()] constructor
 \item[GetHitchRequestsForJourney()]
 \item[GetNewRequests()]
 \item[GetMyHitchRequests()]
@@ -218,5 +221,20 @@ extends 'API.php'
 \end{description}
 
 \subsection{Website}
+
+The website files will be the files that are accessed by the user when interacting with the website. They comprise of 7 main files which display the main features of the site. These files are as follows:
+
+\begin{description}
+\item[index.php] The main page that the user comes to when accessing the site. Has a register form and a log in form on it.
+If a session for the site already exists then the browser is redirected to 'home.php'
+\item[home.php] The home page when logged on to the site. If there is no session already then the browser is redirected to 'index.php'. This page shows suggested journeys for the user.
+\item[activity.php] Displays the user's journeys and hitch requests and prompts any changes that have occurred for them to respond to.
+\item[messages.php] Shows the user's inbox, sent messages and enables them to send a new message.
+\item[profile.php] Shows the user's profile details. 
+\item[search\textunderscore journey.php] A form with search parameters for the user to fill in when searching for journeys.
+\item[post\textunderscore journey.php] A form page with fields which the user is required to fill in before sharing a journey on the site.
+\end{description}
+
+Each of these pages require other files to function properly. For example, the 'profile.php' page has a button on the bottom of the page labelled 'Edit Profile'. This button takes the user to 'edit\textunderscore profile.php' where the static fields from 'profile.php' are editable, and can be submitted to the database using the 'Submit' button which activates database controller classes.
 
 \end{document}
