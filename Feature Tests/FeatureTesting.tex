@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage{longtable}
+\begin{document}
+\begin{titlepage}
+\title{Feature Testing}
+\author{Alexander Roan}
+\maketitle
+\begin{center}
+%\date{}
+Version 1.0 Draft
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+\section{Introduction}
+\subsection{Purpose}
+The purpose of this document is to outline the feature requirements set at the beginning of the project for the website and describe how the website performs against these specifications.
+
+\subsection{Objectives}
+The objective is to details how successful the development of the project has been in achieving its goals that were set from the beginning.
+
+\section{Feature Tests}
+The following table describes each feature and how the website reacts to test input for each feature.
+
+\begin{longtable}{|p{1.5cm}|p{3cm}|p{1.5cm}|p{2cm}|l|}
+\hline
+Code & Description & Input & Output & Result \\
+\hline
+FR.I.01 & Register Form - The page must provide an easy to access register form for personal details to be entered upon registration. Basic details needed are Email address, First name, Last name and Password. More specific details can be entered after registering to the site & Correctly formatted details & User registered and logged into the site & PASS \\
+\cline{3-5}
+ & & Wrongly formatted email address & User not registered and told to re enter details & PASS \\ 
+\hline
+FR.I.02 & Log in Form - There must be a section of the page dedicated to logging in existing users. It must be easily viewed and apparent to users & Correct details already in database & Logged into site & PASS \\
+\cline{3-5}
+ & & Details not already in database but formatted correctly & not logged into site, redirected back to home page to re enter details & PASS \\
+\cline{3-5}
+ & & Badly formatted email address & not logged into site and asked to re-enter details & PASS \\
+\hline
+FR.H.01 & Menu - There should be a menu giving the user access to all of the site's functions separated out into pages that group functionality & Clicking the menu buttons & redirects the page to the correct one & PASS \\
+\hline
+FR.H.02 & Logout - A logout option must be present & Logout button pressed & user redirected to index page where they are required to log in or register & PASS \\
+\hline
+FR.H.03 & User Journeys - Users must be able to see a list of their shared journeys and view their status. This could show how many spaces they have left and new requests others have made to hitch the journeys & 'Activity' button pressed in menu & Taken to activity page where journeys are displayed. Each one can be viewed in detail by pressing on the journey div itself & PASS \\
+\hline
+FR.H.04 & User Hitches - User must be able to view a list of the hitches they have requested to other journeys and view their status. The status of the hitch request depends on whether or not it has been accepted by the driver & 'Activity' button pressed in menu & Taken to activity page where user hitch requests are displayed. Each one can be viewed in detail by pressing on the journey div itself & PASS \\
+\hline
+FR.H.05 & Post Journey - The user must be able to share journeys by posting the details of the journey up on the page. the site must provide a map-style preview of the journey so that the user can be sure the correct origin and destination have been set & Data with corect place names inserted into form and submitted & preview page shows correct map preview and option to submit or go back a page & PASS \\
+\cline{3-5}
+ & & Data with incorrect place name inserted into form & preview page shows incorrect map as expected and option to go back & PASS \\
+\hline
+FR.H.06.01 & Distance Search - The search function must search not only for journeys which originate and terminate at the exact searched locations, but must return journeys which originate and terminate at locations near to that of the search. For example, within ten kilometres & 'Penglais' to 'Penarth' search inserted into form & Journeys from 'Aberystwyth' to 'Cardiff' are returned in search results & PASS \\
+\hline
+FR.H.06.02 & Partial Journey Search - The search function must return journeys in which the searched origin and destination are, or near to (see FR.H.06.01), points along the journey & search from 'Brecon' to 'Builth Wells' inserted into form and submitted & Search results include journeys from 'Aberystwyth' to 'Cardiff' & PASS \\
+\hline
+FR.H.07 & Make a Hitch Request - If a user a selected a journey after searching, they must be able to make a hitch request provided there are spaces remaining & 'Request Hitch' button clicked on journey & Hitch now appears in 'Activity' page as awaiting response from driver & PASS \\
+\hline
+FR.H.08 & Accept/Decline Hitch Requests - When another user requests to hitch a journey that a user has shared, the site must prompt them to accept or decline the new hitcher & 'Accept Hitcher' button clicked on journey page & Hitch is now part of journey, journey route updated and spaces left decreased & PASS \\
+\cline{3-5}
+ & & 'Decline Hitcher' button pressed & Hitch request no longer shows up and no change to journey & PASS \\
+\hline
+FR.H.09 & Suggested Journeys - The site must provide suggested journeys that it predicts a user may be interested in due to their profile details & User logged onto site or returns to home page with full profile completed & 3 suggested journeys displayed & PASS \\
+\cline{3-5}
+ & & User navigates to home page without full profile completed & messages prompting to complete profile for suggested journeys shown & PASS \\
+\hline
+FR.H.10 & Messages - The ability to send and receive messages to and from other users on the site must be available & Message sent to other user using email address & Email sends successfully and appears in 'Sent Items' folder & PASS \\
+\hline
+FR.H.11 & Profile - The user must be able to view and edit their personal and profile details & User navigates to 'Profile' page & profile details displayed & PASS \\
+\cline{3-5}
+ & & 'Edit Profile' button clicked & User directed to page where details can be edited after pressing 'Submit' button & PASS \\ 
+\hline
+FR.H.12 & Journey Cancelling - The user must be able to cancel a journey at any time & User clicks 'Cancel Journey' button on journey page & Journey cancelled and redirected to 'Activity' page where journey no longer displayed & PASS \\
+\hline
+\end{longtable}
+
+\end{document}
