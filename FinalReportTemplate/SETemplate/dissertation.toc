@@ -35,32 +35,44 @@
 \contentsline {section}{\numberline {3.4}Google Geocoding API}{14}
 \contentsline {section}{\numberline {3.5}Database}{14}
 \contentsline {section}{\numberline {3.6}Database Controllers}{14}
-\contentsline {subsection}{\numberline {3.6.1}Searching and Hitching Journeys}{14}
+\contentsline {subsection}{\numberline {3.6.1}Searching and Hitching Journeys}{15}
 \contentsline {section}{\numberline {3.7}Website}{16}
-\contentsline {section}{\numberline {3.8}Review}{16}
-\contentsline {chapter}{\numberline {4}Testing}{17}
-\contentsline {section}{\numberline {4.1}Overview}{17}
-\contentsline {section}{\numberline {4.2}Database Controller Testing}{17}
-\contentsline {subsection}{\numberline {4.2.1}Overview}{17}
-\contentsline {subsection}{\numberline {4.2.2}Unit Tests}{17}
-\contentsline {section}{\numberline {4.3}Website Testing}{18}
-\contentsline {subsection}{\numberline {4.3.1}Overview}{18}
-\contentsline {subsection}{\numberline {4.3.2}Functional Tests}{18}
-\contentsline {chapter}{\numberline {5}Evaluation}{20}
-\contentsline {section}{\numberline {5.1}Original Goals}{20}
-\contentsline {section}{\numberline {5.2}Accomplishments}{21}
-\contentsline {section}{\numberline {5.3}Possible Improvements}{21}
-\contentsline {subsection}{\numberline {5.3.1}Environment}{21}
-\contentsline {subsection}{\numberline {5.3.2}System}{21}
-\contentsline {section}{\numberline {5.4}Future Development}{22}
-\contentsline {section}{\numberline {5.5}Design Choices}{22}
-\contentsline {subsection}{\numberline {5.5.1}Database Controller}{22}
-\contentsline {subsection}{\numberline {5.5.2}Website}{22}
-\contentsline {subsection}{\numberline {5.5.3}Database}{23}
-\contentsline {section}{\numberline {5.6}Approach}{23}
-\contentsline {chapter}{Appendices}{24}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{25}
-\contentsline {chapter}{\numberline {B}Code samples}{26}
-\contentsline {chapter}{\numberline {C}Development Process Documentation}{27}
-\contentsline {chapter}{\numberline {D}Design Diagrams}{28}
-\contentsline {chapter}{Annotated Bibliography}{29}
+\contentsline {section}{\numberline {3.8}Review}{17}
+\contentsline {chapter}{\numberline {4}Testing}{18}
+\contentsline {section}{\numberline {4.1}Overview}{18}
+\contentsline {section}{\numberline {4.2}Database Controller Testing}{18}
+\contentsline {subsection}{\numberline {4.2.1}Overview}{18}
+\contentsline {subsection}{\numberline {4.2.2}Unit Tests}{18}
+\contentsline {section}{\numberline {4.3}Website Testing}{19}
+\contentsline {subsection}{\numberline {4.3.1}Overview}{19}
+\contentsline {subsection}{\numberline {4.3.2}Functional Tests}{19}
+\contentsline {chapter}{\numberline {5}Evaluation}{22}
+\contentsline {section}{\numberline {5.1}Original Goals}{22}
+\contentsline {section}{\numberline {5.2}Accomplishments}{22}
+\contentsline {section}{\numberline {5.3}Possible Improvements}{23}
+\contentsline {subsection}{\numberline {5.3.1}Environment}{23}
+\contentsline {subsection}{\numberline {5.3.2}System}{23}
+\contentsline {section}{\numberline {5.4}Future Development}{23}
+\contentsline {section}{\numberline {5.5}Design Choices}{24}
+\contentsline {subsection}{\numberline {5.5.1}Database Controller}{24}
+\contentsline {subsection}{\numberline {5.5.2}Website}{24}
+\contentsline {subsection}{\numberline {5.5.3}Database}{24}
+\contentsline {section}{\numberline {5.6}Approach}{24}
+\contentsline {chapter}{Appendices}{26}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{27}
+\contentsline {section}{\numberline {1.1}JQuery Library}{27}
+\contentsline {section}{\numberline {1.2}Bootstap CSS Library}{27}
+\contentsline {section}{\numberline {1.3}Google Maps Javascript API}{27}
+\contentsline {section}{\numberline {1.4}Google Directions API}{27}
+\contentsline {section}{\numberline {1.5}Google Geocoding API}{27}
+\contentsline {chapter}{\numberline {B}Code samples}{28}
+\contentsline {section}{\numberline {2.1}SQL Search Query Generator}{28}
+\contentsline {chapter}{\numberline {C}Development Process Documentation}{30}
+\contentsline {section}{\numberline {3.1}Project Specification Document}{30}
+\contentsline {section}{\numberline {3.2}Design Specification Document}{37}
+\contentsline {section}{\numberline {3.3}Feature Testing Document}{48}
+\contentsline {section}{\numberline {3.4}Unit Testing Results}{59}
+\contentsline {chapter}{\numberline {D}Design Diagrams}{60}
+\contentsline {section}{\numberline {4.1}Database UML}{60}
+\contentsline {section}{\numberline {4.2}Database Controller Classes}{61}
+\contentsline {chapter}{Annotated Bibliography}{62}

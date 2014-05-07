@@ -1,15 +1,3 @@
-\chapter{Development Process Documentation}
-
-\section{Project Specification Document}
-\includepdf[pages={1-6}]{Appendix3/ProjectSpecification.pdf}
-
-\section{Design Specification Document}
-\includepdf[pages={1-10}]{Appendix3/DesignSpecification.pdf}
-
-\section{Feature Testing Document}
-\includepdf[pages={1-10}]{Appendix3/FeatureTesting.pdf}
-
-\section{Unit Testing Results}
 PHPUnit 4.0.18 by Sebastian Bergmann.
 
 ..

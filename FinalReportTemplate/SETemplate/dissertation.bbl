@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{#1}
 \csname url@rmstyle\endcsname
 \providecommand{\newblock}{\relax}
@@ -18,14 +18,48 @@
 \fi
 #2}}
 
+\bibitem{about_com_distances}
+About.com, ``What is the distance between a degree of latitude and longitude?''
+  \url{http://geography.about.com/library/faq/blqzdistancedegree.htm}, 2014.
+
+
 \bibitem{blabla}
 BlaBlaCar.com, ``Blablacar.com - online carpooling website,''
   \url{http://www.blablacar.com/}, 2014.
 
 
+\bibitem{bootstrap_dashboard}
+Bootstrap, ``Bootstrap dashboard,''
+  \url{http://getbootstrap.com/examples/dashboard/}, 2014.
+
+
+\bibitem{bootstrap_jumbotron}
+------, ``Bootstrap jumbotron,''
+  \url{http://getbootstrap.com/examples/jumbotron/}, 2014.
+
+
+\bibitem{bootstrap_css}
+------, ``Bootstrap library,'' \url{http://getbootstrap.com/}, 2014.
+
+
+\bibitem{bootstrap_signin}
+------, ``Bootstrap signin,'' \url{http://getbootstrap.com/examples/signin/},
+  2014.
+
+
 \bibitem{carpooling_com}
 Carpooling.com, ``Carpooling.com - online carpooling website,''
   \url{http://www.carpooling.co.uk/}, 2001.
+
+
+\bibitem{php_my_admin}
+P.~Contributors, ``Phpmyadmin,''
+  \url{http://www.phpmyadmin.net/home_page/index.php}, 2014.
+
+
+\bibitem{crud_technique}
+DatabaseAnswers.com, ``Crud matrix,''
+  \url{http://www.databaseanswers.org/data_migration/crud_matrix.htm}, 2014.
 
 
 \bibitem{gov_public_transport_doc}
@@ -45,6 +79,34 @@ developers.google.com, ``Google directions api,''
  \begin{quotation}\noindent API used to retrieve location data using individual
   place names \end{quotation}
 
+\bibitem{facebook}
+Facebook, ``Facebook,'' \url{https://www.facebook.com/}, 2014.
+
+
+\bibitem{jquery_library}
+J.~Foundation, ``Jquery library,'' \url{http://jquery.com/}, 2014.
+
+
+\bibitem{google_api_allowance}
+Google, ``Google api usage limits,''
+  \url{https://developers.google.com/maps/documentation/directions/}, 2014.
+ \begin{quotation}\noindent 'Usage Limits' \end{quotation}
+
+\bibitem{google_maps_javascript_api}
+------, ``Google maps javascript api,''
+  \url{https://developers.google.com/maps/documentation/javascript/}, 2014.
+
+
+\bibitem{github}
+G.~inc, ``Github,'' \url{https://github.com}, 2014.
+ \begin{quotation}\noindent Version control service \end{quotation}
+
+\bibitem{oauth}
+oauth.net/, ``Oauth,'' \url{http://oauth.net/}, 2014.
+ \begin{quotation}\noindent An open protocol to allow secure authorization in a
+  simple and standard method from web, mobile and desktop applications
+  \end{quotation}
+
 \bibitem{trainline_aber_cardiff_price}
 {The Train Line}, ``{TheTrainLine.com Train Times Booking. Aberystwyth -
   Cardiff},''
@@ -53,6 +115,10 @@ developers.google.com, ``Google directions api,''
  \begin{quotation}\noindent A query to thetrainline.com made by myself about
   the prices of train fair between Aberystwyth and Cardiff on the 1st of May
   2014 at 13:30. The price that was shown was \pounds 54.80. \end{quotation}
+
+\bibitem{twitter}
+Twitter, ``Twitter,'' \url{https://twitter.com/}, 2014.
+
 
 \bibitem{guardian_fuel_prices}
 A.~Vial, ``Uk fuel price: how has it changed over time?''

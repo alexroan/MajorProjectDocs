@@ -1,18 +1,39 @@
 \chapter{Code samples}
 
-%\section{Random Number Generator}
+\section{SQL Search Query Generator}
 
-%The Bayes Durham Shuffle ensures that the psuedo random numbers used in the simulation are further shuffled, ensuring minimal correlation between subsequent random outputs \cite{NumericalRecipes}.
+This is the PHP generation of the search query which queries the database for journeys when searching with an origin name, destination name, origin latitude and longitude, destination latitude and longitude, and time frame.
 
-%\begin{verbatim}
-%   }
-%   if ((temp=AM*iy) > RNMX)
-%   {
-%     return RNMX;
-%   }else
-%   {
-%     return temp;	
-%   }
-% }
-%\end{verbatim}
+\begin{verbatim}
+$sql_string = "select * from (select * from journey where jr_origin = '$this->jr_origin' and jr_destination = '$this->jr_destination' 
+            and jr_etd >= '$this->search_date_1' and jr_etd <= '$this->search_date_2' and jr_spaces_available > 0 and jr_is_cancelled = 0 union
+                
+            select * from journey where jr_origin_latitude - $this->jr_origin_lat < 0.04532
+            and jr_origin_latitude - $this->jr_origin_lat > - 0.04532 and jr_origin_longitude - $this->jr_origin_lng
+            < 0.041 and jr_origin_longitude - $this->jr_origin_lng > -0.041 and jr_destination_latitude
+            - $this->jr_destination_lat < 0.04532 and jr_destination_latitude - $this->jr_destination_lat > -0.04532
+            and jr_destination_longitude - $this->jr_destination_lng < 0.041 and jr_destination_longitude
+            - $this->jr_destination_lng > -0.041 and jr_etd >= '$this->search_date_1' and jr_etd <= '$this->search_date_2' and jr_spaces_available > 0 and jr_is_cancelled = 0 union
+                
+            select * from journey where jr_pk in (select distinct js_jr from journey_step where js_jr in (select jr_pk from journey where jr_origin_latitude - $this->jr_origin_lat <= 0.04532
+            and jr_origin_latitude - $this->jr_origin_lat >= - 0.04532 and jr_origin_longitude - $this->jr_origin_lng
+            <= 0.041 and jr_origin_longitude - $this->jr_origin_lng >= -0.041) and js_latitude - $this->jr_destination_lat >= -0.3153
+            and js_latitude - $this->jr_destination_lat <= 0.3153 and js_longitude - $this->jr_destination_lng >= -0.35 and
+            js_longitude - $this->jr_destination_lng <= 0.35) and jr_etd >= '$this->search_date_1' and jr_etd <= '$this->search_date_2' and jr_spaces_available > 0 and jr_is_cancelled = 0 union
+                
+            select * from journey where jr_pk in (select distinct js_jr from journey_step where js_jr in (select jr_pk from journey where jr_destination_latitude - $this->jr_destination_lat <= 0.04532
+            and jr_destination_latitude - $this->jr_destination_lat >= - 0.04532 and jr_destination_longitude - $this->jr_destination_lng
+            <= 0.041 and jr_destination_longitude - $this->jr_destination_lng >= -0.041) and js_latitude - $this->jr_origin_lat >= -0.3153
+            and js_latitude - $this->jr_origin_lat <= 0.3153 and js_longitude - $this->jr_origin_lng >= -0.35 and
+            js_longitude - $this->jr_origin_lng <= 0.35) and jr_etd >= '$this->search_date_1' and jr_etd <= '$this->search_date_2' and jr_spaces_available > 0 and jr_is_cancelled = 0 union
+                
+            select * from journey where jr_pk in (select distinct a.js_jr from journey_step a inner join journey_step b on a.js_jr = b.js_jr 
+            where a.js_latitude - $this->jr_origin_lat >= -0.1 and a.js_latitude - $this->jr_origin_lat <= 0.1 and 
+            a.js_longitude - $this->jr_origin_lng >= -0.09009 and a.js_longitude - $this->jr_origin_lng <= 0.09009 and 
+            b.js_latitude - $this->jr_destination_lat >= -0.1 and b.js_latitude - $this->jr_destination_lat <= 0.1 and 
+            b.js_longitude - $this->jr_destination_lng >= -0.09009 and b.js_longitude - $this->jr_destination_lng <= 0.09009)
+            and jr_etd >= '$this->search_date_1' and jr_etd <= '$this->search_date_2' and jr_spaces_available > 0 and jr_is_cancelled = 0) journey order by jr_etd";
+\end{verbatim}
+
+
 
