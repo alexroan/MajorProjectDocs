@@ -20,8 +20,8 @@ Testing was performed in the following ways. The main strategies I have used inv
 		Each model class, 'Person.php', 'Message.php', 'Journey.php', 'Journey\textunderscore Step.php' and 'Hitch\textunderscore Request.php' were tested for their 'Create()', 'Load()', 'Update()' and 'Delete()' methods to ensure that data was being parsed correctly. The model tests followed the following steps to test these functions:
 
 \begin{description}
-\item[Instanciate] Instanciating the object and set the attributes to desired values
-\item[Create()] Use the atribute values to insert a new record into the database table via the 'Create()' method in the class.
+\item[Instantiate] Instantiating the object and set the attributes to desired values
+\item[Create()] Use the attribute values to insert a new record into the database table via the 'Create()' method in the class.
 \item[Load()] Use the 'Load()' method to retrieve the new entry in the table and assert the retrieved values are equal to the initial attribute values used to insert into the database table.
 \item[Update()] Change one of the attributes in the model class and use 'Update()' to update the entry in the database table with the new attribute values and assert that the new retrieved values are equal to that of the updated ones in the class.
 \item[Delete()] Use delete to remove the entry in the database table and assert that the action returns true.
@@ -31,9 +31,9 @@ As well as the testing of the model classes, the controller classes have each be
 
 \section{Website Testing}
 	\subsection{Overview}
-		The website testing was performed by following the fnctional requirements set out in the project specification document compiled at the beginning of the project. The full feature test results table can be found in the appendix.
+		The website testing was performed by following the functional requirements set out in the project specification document compiled at the beginning of the project. The full feature test results table can be found in the appendix.
 	\subsection{Functional Tests}
-		The functional tests of the website are high level functional requirements that involve all sections of the project. The basic results are as follows:
+		The functional tests of the website are high level functional requirements that involve all sections of the project. The reason for performing these feature tests was to make sure that the website performed the tasks that it was set out to do from the beginning of the project. The basic results are as follows:
 
 \begin{tabular}{| l | p{9cm} | r |}
 \hline

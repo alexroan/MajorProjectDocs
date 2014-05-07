@@ -47,15 +47,18 @@
 \contentsline {subsection}{\numberline {4.3.1}Overview}{18}
 \contentsline {subsection}{\numberline {4.3.2}Functional Tests}{18}
 \contentsline {chapter}{\numberline {5}Evaluation}{20}
-\contentsline {section}{\numberline {5.1}Original Goals}{21}
-\contentsline {section}{\numberline {5.2}Accomplishments}{21}
-\contentsline {section}{\numberline {5.3}Future Improvements}{21}
+\contentsline {section}{\numberline {5.1}Original Goals}{20}
+\contentsline {section}{\numberline {5.2}Accomplishments}{20}
+\contentsline {section}{\numberline {5.3}Possible Improvements}{21}
 \contentsline {section}{\numberline {5.4}Future Development}{21}
 \contentsline {section}{\numberline {5.5}Design Choices}{21}
-\contentsline {section}{\numberline {5.6}Approach}{21}
-\contentsline {chapter}{Appendices}{22}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{23}
-\contentsline {chapter}{\numberline {B}Code samples}{24}
-\contentsline {chapter}{\numberline {C}Development Process Documentation}{25}
-\contentsline {chapter}{\numberline {D}Design Diagrams}{26}
-\contentsline {chapter}{Annotated Bibliography}{27}
+\contentsline {subsection}{\numberline {5.5.1}Database Controller}{21}
+\contentsline {subsection}{\numberline {5.5.2}Website}{21}
+\contentsline {subsection}{\numberline {5.5.3}Database}{22}
+\contentsline {section}{\numberline {5.6}Approach}{22}
+\contentsline {chapter}{Appendices}{23}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{24}
+\contentsline {chapter}{\numberline {B}Code samples}{25}
+\contentsline {chapter}{\numberline {C}Development Process Documentation}{26}
+\contentsline {chapter}{\numberline {D}Design Diagrams}{27}
+\contentsline {chapter}{Annotated Bibliography}{28}
