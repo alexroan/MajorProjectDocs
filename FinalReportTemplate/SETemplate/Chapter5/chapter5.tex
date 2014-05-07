@@ -18,35 +18,49 @@ There will be good things and room for improvement with any project. As you writ
 Review the discussion on the Evaluation section from the lectures. A recording is available on Blackboard. 
 
 \section{Original Goals}
-The original goals set out in the project specification 
+The original goals set out in the project specification were set in such a way that they could be realistically accomplished within the time set for the project. 
+
+Before the project was fully under way, part of the original goals was to aim the site at students in university, not just the general public. There was also the discussion of producing a mobile application along with the website that could be used by users to share and hitch journeys. This would prove to be far too much work to be completed in the time frame available so it was decided that the website with the specific search features and journey alterations be identified as the priority.
+
+I feel that the requirements of the project were identified fairly well. The management of the journeys, the combination of pick ups and drop off points at certain points of journeys, was identified as one of the core concepts in the requirements for good reason. They enable users to accept or decline depending on their own preferences and can view the edited route should they accept the hitcher. This enables them to make an educated decision as to whether it is cost effective / worth the effort of picking the hitcher up.
 
 \section{Accomplishments}
-I believe that the original goals that were set out from the beginning were accomplished to a good standard. I also believe however, that the project deserves a more extensive result. The purpose of the website was always to provide a solution to a wide range of people, and to provide a wide range of services so as to encourage a large user base. Unfortunately, I think the intended size of the project I had planned from the beginning was perhaps larger than was realistically possible which resulted in the specifications being as small in number as they are. 
+I believe that the original goals that were set out from the beginning were accomplished to a good standard. I also believe however, that the project deserves a more extensive result. The purpose of the website was always to provide a solution to a wide range of people, and to provide a wide range of services so as to encourage a large user base. Unfortunately, I think the intended size of the project I had planned from the beginning before requirements were set was perhaps larger than was realistically possible which resulted in the specifications being as small as they are. 
 
-The site performs the type of search that I emphasised. Enabling journeys to be found which cover points along the routes, and then changing the routes depending on pick up points and drop off points.
+The site performs the type of search that I emphasised in the requirements. It returns journeys which cover points along the routes, and then changes the routes depending on pick up points and drop off points if the hitch request is accepted by the driver. 
 
 \section{Possible Improvements}
+\subsection{Environment}
+The PSQL database I used to create my data storage system did cause time to be wasted slightly. This was mainly due to the fact that I did not have any access to a database management software system such as 'phpMyAdmin'\cite{php_my_admin} to manage the database tables themselves, everything had to be performed in the command line. Although this does provide a lot of flexibility, I feel as though time could have been saved with some sort of graphical user interface instead of text based.
 
+\subsection{System}
+There are a few things I would improve in hindsight. The website interface leaves a bit to be desired when it comes to graphical design. The initial idea was to make sure that all the pages worked correctly, and then introduce more interesting design features. However, time constraints meant that functionality came before producing more attractive pages.
+
+In terms of the project's actual functionality, I would probably add a feature which acts like a 'wanted' add. Currently, the site accommodates for drivers haring journeys that they plan on driving, and offer them to potential passengers. The passengers then search for journeys between locations they wish to travel and hope that a journey exists already. The 'wanted' journey add would enable users to post up a journey that they wish they could travel, but can't because of no vehicle / lack of money. Drivers could see them and decide that they would want to take part in that journey. This approach could increase use in the site because both the drivers and hitchers share their wishes to travel, where as currently the functionality only allows drivers to share, and hitchers to search.
+
+I think I would improve the method in which the website works with the database controllers. The code in the files that dynamically output the HTML and JavaScript for the user's browser is quite messy because it needs to make use of the database controllers almost like a 'main' method does in a Java program. If starting from scratch again, I would seriously consider developing a completely Model-View-Controller approach to the entire system.
 
 \section{Future Development}
 The future development of this project would involve the following features:
 
 \begin{itemize}
 \item The improvement of the website interface. Currently, the website does perform the tasks it was set out to provide to the user, but could be improved by analysing the current state of interaction between human and site with questionnaires.
-\item 
+\item Interoperability using protocols such as OAuth to extract existing user data from accounts the user already maintains. This would include social media accounts such as Facebook\cite{facebook} and Twitter\cite{twitter}
+\item Improved messaging system.
+\item Ability to post 'wanted' type adds as a hitcher. This would enable drivers to see the adds and possibly offer to be the driver.
 \end{itemize}
 
 \section{Design Choices}
 \subsection{Database Controller}
-I think the choices I made regarding design of the project could have been better. In hindsight, the design of the database controllers and website could have been much more structured in the form of a standard design pattern. Although it is a tweaked version of the Model-View-Controller pattern, I think it came to be as a result of indecision regarding the design of the site. If more research was done towards Representational State Transfer (RESTful) services I would have probably designed the project to follow that instead. This is due to RESTful services being so easily expandable, and would probably have allowed me to more easily add extra features to the site once the structure of the project had been developed.
+I think the choices I made regarding design of the project could have been better. In hindsight, the design of the database controllers and website could have been much more structured in the form of a standard design pattern. Although it is a tweaked version of the Model-View-Controller pattern, I think it came to be as a result of indecision regarding the design of the system. If more research was done towards Representational State Transfer (RESTful) services I would have probably designed the project to follow that kind of structure instead. This is due to RESTful services being so easily expandable, and would probably have allowed me to more easily add extra features to the site once the core of the project had been developed.
 
 \subsection{Website}
-The website developed was completely procedural, and made use of the object oriented controller classes when required. Although this allowed me to develop a completely customised website to my own specifications, it did mean that each file that I produced had to be written from scratch. There are obvious advantages to this, such as being able to develop customised pages for whatever function the page is intended to provide, but the time it took to create them and the amount of separate files that needed to be created was a potential hindrance to the project.
+The website developed was completely procedural, and made use of the object oriented controller classes when required. Although this allowed me to develop a completely customised website to my own specifications on each page, it did mean that each file that I produced had to be written from scratch. There are obvious advantages to this, such as being able to develop customised pages for whatever function the page is intended to provide, but the time it took to create them and the amount of separate files that needed to be created was a potential hindrance to the project.
 
 \subsection{Database}
-I feel the design of the database was as simple as could have been possibly made. It enables the site to store as much important information as possible whilst reducing the complexity of the queries that need to be made to extract related information from multiple tables. 
+I feel the design of the database was as simple as could have been possibly made. It enables the site to store as much important information as possible whilst reducing the complexity of the queries that need to be made to extract related information from multiple tables. Other tables and features could have been added had the requirements stated so, but the design of the database enables the system to function according to the specifications that were finalised during the planning stage.
 
 \section{Approach}
-The approach to the design of this project could have been performed to a better standard. Initially, not sure whether I wanted to develop using an agile methodology or a more structured one like the Waterfall method meant that I deviated from any methodology slightly when developing prototypes to test some features without any planning. Although I did gain some valuable information from this, I feel that it may have wasted time that could have been better spent planning, researching and designing the system at a higher level.
+The approach to the design of this project could have been performed to a better standard. Initially, not sure whether I wanted to develop using an agile methodology or a more structured one like the Waterfall method, I deviated from following any methodology when developing prototypes to test some features without any planning. Although I did gain some valuable information from this, I feel that it may have wasted time that could have been better spent planning, researching and designing the system at a higher level. Doing more research could have resulted in me realising that more features could have been added to the specifications and introduced to the system.
 
-In hindsight, I do believe that the Waterfall method was the correct method to develop this project. Although I did not follow its steps strictly, I believe that it enabled me to make architectural decisions regarding the database which would not have developed with a sensible structure had I used an agile approach such as Feature Driven Development. 
+In hindsight, I do believe that the Waterfall method was the correct method to develop this project. Although I did not follow its steps strictly, I believe that it enabled me to make architectural decisions regarding the database which would not have developed with a sensible structure had I used an agile approach such as Feature Driven Development. Specifications were outlined at the beginning, and design documents and diagrams were produced. 

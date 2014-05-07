@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {2.2.5}Programming Environment}{6}
 \contentsline {section}{\numberline {2.3}Overall Architecture}{6}
 \contentsline {subsection}{\numberline {2.3.1}Overview}{6}
-\contentsline {subsection}{\numberline {2.3.2}Other Considered API Structures}{6}
+\contentsline {subsection}{\numberline {2.3.2}Other Considered API-Like Structures}{6}
 \contentsline {subsection}{\numberline {2.3.3}Structure of Database Controller}{7}
 \contentsline {section}{\numberline {2.4}Website Design}{8}
 \contentsline {subsection}{\numberline {2.4.1}Overview}{8}
@@ -35,7 +35,7 @@
 \contentsline {section}{\numberline {3.4}Google Geocoding API}{14}
 \contentsline {section}{\numberline {3.5}Database}{14}
 \contentsline {section}{\numberline {3.6}Database Controllers}{14}
-\contentsline {subsection}{\numberline {3.6.1}Searching and Hitching Journeys}{15}
+\contentsline {subsection}{\numberline {3.6.1}Searching and Hitching Journeys}{14}
 \contentsline {section}{\numberline {3.7}Website}{16}
 \contentsline {section}{\numberline {3.8}Review}{16}
 \contentsline {chapter}{\numberline {4}Testing}{17}
@@ -48,17 +48,19 @@
 \contentsline {subsection}{\numberline {4.3.2}Functional Tests}{18}
 \contentsline {chapter}{\numberline {5}Evaluation}{20}
 \contentsline {section}{\numberline {5.1}Original Goals}{20}
-\contentsline {section}{\numberline {5.2}Accomplishments}{20}
+\contentsline {section}{\numberline {5.2}Accomplishments}{21}
 \contentsline {section}{\numberline {5.3}Possible Improvements}{21}
-\contentsline {section}{\numberline {5.4}Future Development}{21}
-\contentsline {section}{\numberline {5.5}Design Choices}{21}
-\contentsline {subsection}{\numberline {5.5.1}Database Controller}{21}
-\contentsline {subsection}{\numberline {5.5.2}Website}{21}
-\contentsline {subsection}{\numberline {5.5.3}Database}{22}
-\contentsline {section}{\numberline {5.6}Approach}{22}
-\contentsline {chapter}{Appendices}{23}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{24}
-\contentsline {chapter}{\numberline {B}Code samples}{25}
-\contentsline {chapter}{\numberline {C}Development Process Documentation}{26}
-\contentsline {chapter}{\numberline {D}Design Diagrams}{27}
-\contentsline {chapter}{Annotated Bibliography}{28}
+\contentsline {subsection}{\numberline {5.3.1}Environment}{21}
+\contentsline {subsection}{\numberline {5.3.2}System}{21}
+\contentsline {section}{\numberline {5.4}Future Development}{22}
+\contentsline {section}{\numberline {5.5}Design Choices}{22}
+\contentsline {subsection}{\numberline {5.5.1}Database Controller}{22}
+\contentsline {subsection}{\numberline {5.5.2}Website}{22}
+\contentsline {subsection}{\numberline {5.5.3}Database}{23}
+\contentsline {section}{\numberline {5.6}Approach}{23}
+\contentsline {chapter}{Appendices}{24}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{25}
+\contentsline {chapter}{\numberline {B}Code samples}{26}
+\contentsline {chapter}{\numberline {C}Development Process Documentation}{27}
+\contentsline {chapter}{\numberline {D}Design Diagrams}{28}
+\contentsline {chapter}{Annotated Bibliography}{29}

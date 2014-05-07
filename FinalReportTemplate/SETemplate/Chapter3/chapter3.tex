@@ -1,13 +1,7 @@
 \chapter{Implementation}
 
-The implementation should look at any issues you encountered as you tried to implement your design. During the work, you might have found that elements of your design were unnecessary or overly complex; perhaps third party libraries were available that simplified some of the functions that you intended to implement. If things were easier in some areas, then how did you adapt your project to take account of your findings?
-
-It is more likely that things were more complex than you first thought. In particular, were there any problems or difficulties that you found during implementation that you had to address? Did such problems simply delay you or were they more significant? 
-
-You can conclude this section by reviewing the end of the implementation stage against the planned requirements. 
-
 \section{Overview}
-	There were a few quite large scale changes in though during the implementation of the project. A number involved the structure of the API / database controller written in PHP. 
+	There were a few changes in though during the implementation of the project. A number involved the structure of the API / database controller written in PHP. 
 	
 \section{PHP}
 	A few languages were considered for this project, these include Ruby, Python and Perl. Perl was the first to be discarded. This was mainly due to its performance and usability when used in an Object Oriented fashion. Ruby with Ruby of Rails provides a very stable platform to develop upon, but does not quite have the flexibility that I intended to yield in the development. The final decision came between Python and PHP. Python is a clean language with very good performance and is easy to use. However, the flexibility that PHP provides when developing web pages and its good Object Oriented capabilities meant that I sided with it even though its performance may not be as good as Python.
@@ -17,7 +11,7 @@ You can conclude this section by reviewing the end of the implementation stage a
 \section{Google Directions API}
 	Google Directions API was considered the most applicable API for generating the journey steps that were needed to store for each of the journeys. Implementing the use of this API within the application proved to be a bit of a struggle when parsing the output retrieved from the API. But once the layers of arrays were mastered, slotting the desired information into the database tables came quickly after. 
 	
-	The API allows for an origin, a destination and up to 8 way points parsed to it. It then returns a JSON string detailing the global positioning in latitude and longitude of the origin, destination and waypoints, and an array of route data for each of the routes calculated. The API can be set to only output a single route if necessary. The route data hold an array of every leg of the journey. The legs of the route are split by each of the way points, meaning if no way points are parsed to the API then there will only be one leg in the resulting route data. Each leg holds an array of steps. These steps describe the geographical location and html instructions of each of the main steps on the journey. It is this step data that my service must be able to retrieve and store to compile a full series of journey steps for each journey. I need this step data to perform more complex searches upon journeys.
+	The API allows for an origin, a destination and up to 8 way points parsed to it. It then returns a JSON string detailing the global positioning in latitude and longitude of the origin, destination and way points, and an array of route data for each of the routes calculated. The API can be set to only output a single route if necessary. The route data hold an array of every leg of the journey. The legs of the route are split by each of the way points, meaning if no way points are parsed to the API then there will only be one leg in the resulting route data. Each leg holds an array of steps. These steps describe the geographical location and html instructions of each of the main steps on the journey. It is this step data that my service must be able to retrieve and store to compile a full series of journey steps for each journey. I need this step data to perform more complex searches upon journeys.
 	
 	The step data stored in the 'Journey\textunderscore Step' table is used during the searching of journeys. If a user searches for a Journey between 'Brecon' and 'Cardiff', the search would not only look through the main 'Journey' table for journey with that origin and destination data, but it looks through journey step data too. So this search could find a journey from Aberystwyth to Bristol which has step data running through or near 'Brecon' and 'Cardiff'. 
 	
@@ -43,6 +37,19 @@ The database structure and relation underwent a slight change from the original 
 
 \subsection{Searching and Hitching Journeys}
 As stated in the requirements, one of the most important aspects of the project was to produce a search which not only returned journeys which matched origin and destinations, but returned journeys which passed through places that were being serached. As explained in the 'Google Directions API' section of this chapter, the Google Directions API was used to store journey steps as well as journeys. This part of the functionality proved to be the most difficult to get right.
+
+The method in which the search function performs its search is compiling a large SQL query to the database. It combines five aspects of the search into one set of results. These five aspects are as follows:
+
+\begin{description}
+\item[Origin and Destination Names] The first aspect of the query searches for journeys with the same origin and destination names as the search parameters. 
+\item[Origin and Destination Proximity] The second aspect searches for journeys where the origin and the destination are within twenty kilometres of the search origin and destination respectively, using the latitude and longitude retrieved from the Google Geolocation API.
+\item[Origin proximity, Drop Off Location] The third aspect searches for journeys where the origin is within twenty kilometres of the searched origin, and searches the resulting journey steps of that journey for a journey step within twenty kilometres of the searched destination.
+\item[Destination proximity, Pick Up Location] The fourth aspect searches for journeys where the destination is located within twenty kilometres from the searched destination location, and the resulting journey steps are searched to find a journey step which is within twenty kilometres of the searched origin.
+\item[Journey Steps] The fifth aspect searches through the journey steps of each of the journeys to find a route which has steps within twenty kilomtres of both the searched origin and destination in the correct order.
+\end{description}
+
+SOMETHING ABOUT UNION OF ALL
+TALK ABOUT KM TO LAT AND LONG!!
 
 Once the serach function had been developed and was working correctly: returning journeys which not only started and ended at the searched locations, but journeys which passed through such searched locations; the hitch request was subject to acceptance or denial by the driver of the journey. If the driver acceptede the hitch and it involved only a part of the full journey, the journey steps needed to be modified in the database to include the new waypoints. The management of journey steps in the database and PHP database controller classes proved quite difficult, but was evetually accomplished by the communication between controller classes. The acceptance of hitch requests follow these steps:
 
