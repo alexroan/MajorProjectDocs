@@ -38,7 +38,7 @@ The decomposition of the database describes each of the tables and their attribu
 	\item[ps\textunderscore register\textunderscore date] date, not null, default = Now()
 	\end{description}
 	
-The 'Person' table holds the personal details of each of the website's users. the 'home\textunderscore 1' through to 'current\textunderscore location' are not required to be filled in upon registration to the site but are required if the user wishes to receive suggested journeys. The primary key in this table is the user's email address.
+The 'Person' table holds the personal details of each of the website's users. The 'home\textunderscore 1' through to 'current\textunderscore location' are not required to be filled in upon registration to the site but are required if the user wishes to receive suggested journeys. The primary key in this table is the user's email address.
 	
 \item[Message]:
 
@@ -88,7 +88,7 @@ The 'Journey' table is responsible for storing the majority of information relat
 	\item[js\textunderscore longitude] real, not null
 	\end{description}
 	
-The 'Journey\textunderscore Step' table stores data regarding each step of journey. the primary key is generated as the next available integer primary key. The 'js\textunderscore jr' refers to the journey that the step belongs to by referencing the 'Journey' table's primary key. The 'js\textunderscore step\textunderscore order refers to the order of the step in the journey.
+The 'Journey\textunderscore Step' table stores data regarding each step of journey. The primary key is generated as the next available integer primary key. The 'js\textunderscore jr' refers to the journey that the step belongs to by referencing the 'Journey' table's primary key. The 'js\textunderscore step\textunderscore order refers to the order of the step in the journey.
 
 \item[Journey\textunderscore Step\textunderscore Temp]:
 

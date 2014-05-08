@@ -9,7 +9,7 @@ Testing was performed in the following ways. The main strategies I have used inv
 		The testing for the database controller was done by unit testing the model and controller classes. The feature testing of the database controller was performed during the feature testing of the website during use. Each feature described in the project specification (Appendix) was tested as a feature
 
 	\subsection{Unit Tests}
-		PHPUnit tests were written for the testing of the model classes which represent tables in the database. The reason for this was to ensure that data was being transferred and handled correctly to and from the database into the model classes. The CRUD methods in each model class in the database controller needed to work perfectly for the higher level functions in the corresponding controller class functioned properly. 
+		PHPUnit tests were written for the testing of the model classes which represent tables in the database. The reason for this was to ensure that data was being transferred and handled correctly to and from the database into the model classes. The CRUD methods, in each model classes in the database controller, needed to work perfectly for the higher level functions in the corresponding controller classes to function properly. 
 
 		Each model class, 'Person.php', 'Message.php', 'Journey.php', 'Journey\textunderscore Step.php' and 'Hitch\textunderscore Request.php' were tested for their 'Create()', 'Load()', 'Update()' and 'Delete()' methods to ensure that data was being parsed correctly. The model tests followed the following steps to test these functions:
 
@@ -33,7 +33,7 @@ As well as the testing of the model classes, the controller classes have each be
 \hline
 Test Code & Description & Result \\
 \hline
-FR.I.01 & Register Form - The page must provide an easy to access register form for personal details to be entered upon registration. Basic details needed are Email address, First name, Last name and Password. More specific details can be entered after registering to the site & Pass \\
+FR.I.01 & Register Form - The page must provide an easy to access register form for personal details to be entered upon registration. Basic details needed are: email address, first name, last name and password. More specific details can be entered after registering to the site & Pass \\
 \hline
 FR.I.02 & Log in Form - There must be a section of the page dedicated to logging in existing users. It must be easily viewed and apparent to users. & Pass \\
 \hline
