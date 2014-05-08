@@ -4,7 +4,8 @@
 
 This is the PHP generation of the search query which queries the database for journeys when searching with an origin name, destination name, origin latitude and longitude, destination latitude and longitude, and time frame.
 
-\begin{verbatim}
+
+\begin{lstlisting}
 $sql_string = "select * from (select * from journey where jr_origin = '$this->jr_origin' and jr_destination = '$this->jr_destination' 
             and jr_etd >= '$this->search_date_1' and jr_etd <= '$this->search_date_2' and jr_spaces_available > 0 and jr_is_cancelled = 0 union
                 
@@ -33,7 +34,5 @@ $sql_string = "select * from (select * from journey where jr_origin = '$this->jr
             b.js_latitude - $this->jr_destination_lat >= -0.1 and b.js_latitude - $this->jr_destination_lat <= 0.1 and 
             b.js_longitude - $this->jr_destination_lng >= -0.09009 and b.js_longitude - $this->jr_destination_lng <= 0.09009)
             and jr_etd >= '$this->search_date_1' and jr_etd <= '$this->search_date_2' and jr_spaces_available > 0 and jr_is_cancelled = 0) journey order by jr_etd";
-\end{verbatim}
-
-
+\end{lstlisting}
 

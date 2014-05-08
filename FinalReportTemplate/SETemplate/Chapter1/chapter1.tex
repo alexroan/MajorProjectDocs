@@ -5,9 +5,9 @@ As a student studying in a university away from home, I have often needed to tra
 
 I have always driven to Cardiff from Aberystwyth and back during the holidays in a car with 4 spare seats. If there was some way I could offer those spare seats to other students or people travelling in the same or similar direction the cost of fuel could be split, meaning a cheaper mode of transport.
 
-With the cost of public transport soaring ever higher\cite{gov_public_transport_doc}, travelling around the country is becoming a more expensive task year after year. Not only are Bus and Train prices increasing, but petrol prices have sky rocketed in the last century\cite{guardian_fuel_prices} as well. This website aims to bring people together who are travelling in similar directions to save on the cost of fuel instead of having to pay a full train fair or travelling alone. 
+With the cost of public transport soaring ever higher\cite{gov_public_transport_doc}, travelling around the country is becoming a more expensive task year after year. Not only are bus and train prices increasing, but petrol prices have sky rocketed in the last century\cite{guardian_fuel_prices} as well. This website aims to bring people travelling in similar directions together, to save on the cost of fuel instead of having to pay a full train fair or travelling alone. 
 
-A one way train ticket between Aberystwyth and Cardiff costs around \pounds 54.80\cite{trainline_aber_cardiff_price}, a journey that in a small car can cost as little as \pounds 20 in fuel. If That journey is shared between a driver and a passenger who would otherwise have no option but to take the train, they would each only need to pay \pounds 10 for the journey. The driver saves \pounds 10 on their journey, and the passenger saves a massive \pounds 44.80 on theirs!
+A one way train ticket between Aberystwyth and Cardiff costs around \pounds 54.80\cite{trainline_aber_cardiff_price}, a journey that in a small car can cost as little as \pounds 20 in fuel. If that journey is shared between a driver and a passenger, who would otherwise have no option but to take the train, they would each only need to pay \pounds 10 for the journey. The driver would save \pounds 10 on their journey, and the passenger would save \pounds 44.80.
 
 
 \subsection{Example Use Case}
@@ -15,7 +15,7 @@ A one way train ticket between Aberystwyth and Cardiff costs around \pounds 54.8
 	
 	Once logged in, the user is taken to their home page, which displays predicted journeys that the site thinks the user might be interested in using their preferences. From this page, they can access all features within the site, which include:
 	\begin{itemize}
-		\item 'My Activity' - Information about upcoming rides and hitches related to the user. The ability to accept or decline hitch requests for their journeys.
+		\item 'My Activity' - Information about upcoming rides and hitches related to the user. The option to accept or decline hitch requests for their journeys.
 		\item 'Messages' - Messages to and from other users.
 		\item 'My Profile' - Personal details about the user, available for editing.
 		\item 'Find a Journey' - A search page used to search for journeys from one location to another.
@@ -26,12 +26,12 @@ A one way train ticket between Aberystwyth and Cardiff costs around \pounds 54.8
 	
 	If another user requests to hitch a ride on the journey, the driver will be prompted in the 'My Activity' page, and will have the option of accepting or declining the hitch request. 
 	
-	The hitch request could be from location A to location B, but it could also be from location A to a new location C. Similarly it could be from location C to location B, or even location C to location D. It is up to the driver to accept or decline the hitch request, depending on how it changes the route that the driver takes.
+	The hitch request could be from the origin to the destination, but it could also be from origin to a new location along the route of the original journey. Similarly, it could be from a location along the route of the journey to the journey destination, or even from one location along the route somewhere to another. It is up to the driver to accept or decline the hitch request, depending on how it changes the route that the driver takes.
 	
 	If the driver accepts this new hitcher, the route will be altered if necessary to include the new pickup / drop off points and saved into the database with one of the spare spaces now filled.
 	 
 \subsection{Existing Services}
-	There are existing websites that offer the same sort of carpooling service. The leading services are Carpooling.com \cite{carpooling_com} and BlaBlaCar \cite{blabla}. These sites provide a platform for people to offer rides to other people needing to travel in similar directions.
+	There are existing websites that offer the same sort of carpooling service. The leading services are Carpooling.com \cite{carpooling_com} and BlaBlaCar.com \cite{blabla}. These sites provide a platform for people to offer rides to other people needing to travel in similar directions.
 	
 	\begin{description}
 	\item[Carpooling.com] This is a worldwide service which offers registered users the chance to share rides to other users.
@@ -51,14 +51,14 @@ The most important goals of the project are as follows:
 \item Register as a new user to the site
 \item Log in with existing details
 \item Edit profile details
-\item Post a Journey that the user will be driving from location A to location B
+\item Post a journey that the user will be driving from location A to location B
 \item Search for journeys between two locations. The search must return journeys in which the searched location appear along some points on the journeys
-\item Request to Hitch a journey as a passenger
+\item Request to hitch a journey as a passenger
 \item Accept or decline a hitcher as the driver
 \item Send messages to other users on the site
 \end{itemize}
 
-Ideally, provided a more extensive time period, the requirements would involve more in-depth services. These include the like of integration with social networking sites and the introduction of interoperability such as OAuth\cite{oauth} to extract data from existing user account to different services. Also, a service like this would benefit from being portable, with a mobile application being developed. Unfortunately, time restrictions and priority on the main purpose of the project meant that these features were omitted from the initial requirements stage.
+Ideally, provided a more extensive time period, the requirements would involve more in-depth services. These include the like of integration with social networking sites and the introduction of interoperability such as OAuth\cite{oauth} to extract data from existing user account to different services. Also, a service like this would benefit from being accessible away from a traditional desktop computer, with a mobile application being developed. Unfortunately, time restrictions and priority on the main purpose of the project meant that these features were omitted from the initial requirements stage.
 
 \section{Process}
 \subsection{Overview}
@@ -69,7 +69,7 @@ Research into the types of technologies I needed to use was also required, promp
 \subsection{Methodology}
 Agile methodologies were considered for the development of this project. The decision lied mainly between choosing Feature Driven Development (FDD) along with Test Driven Development (TDD) as the method of coding the site, or using the more structured Waterfall method of development. There were pros and cons to both of these methods. 
 
-Feature Driven Development would allow a very flexible environment in which to develop each feature iteratively, without much thought into future architecture. Although this would account for any future changes in specification or problems encountered during the implementation stage, I did not feel as though it would suit the development of the site. This is due to the lack or architectural planning involved in agile methodologies such as FDD. I feel that a project as reliant on its data storage method such as this requires more thought towards the design of such data storage methods. A tweaked version of FDD was still an option, allowing for a plan and design of the database, with the incremental development of each of the features implemented over time using the original database design which would be developed first. This however, defeats the object of agile development because it would not really allow for any future changes due to the architecture being set in stone from the beginning.
+Feature Driven Development would allow a very flexible environment in which to develop each feature iteratively, without much thought into future architecture. Although this would account for any future changes in specification or problems encountered during the implementation stage, I did not feel as though it would suit the development of the site. This is due to the lack of architectural planning involved in agile methodologies such as FDD. I feel that a project as reliant on its data storage method such as this requires more thought towards the design of such data storage methods. A tweaked version of FDD was still an option, allowing for a plan and design of the database, with the incremental development of each of the features implemented over time using the original database design which would be developed first. This however, defeats the object of agile development because it would not really allow for any future changes due to the architecture being set in stone from the beginning.
 
 The Waterfall methodology requires that specifications and design are compiled well before implementation begins, and I feel that this suited the project more. The architecture of the database, and program controlling data flow to and from it, could be planned in advance and implemented within a short period of time. Although this did not account much for future changes, the architecture could be discussed in detail and designed with planning rather than be developed on the fly, resulting in a more normalised relational database.
 
@@ -81,6 +81,6 @@ Google Directions API\cite{google_directions_api} was found to be a valuable ass
 Another valuable API that was researched was the Google Geocoding API\cite{google_geocoding_api}. This API returns the geographical location in latitude and longitude of any place name given as a parameter, useful when searching using the geographical location of places along the route of journeys.
 
 \subsection{Planning}
-The planning that was carried out followed that of the requirements of the Waterfall development methodology. Initially, a project specification document was developed to outline the requirements of the project. Once they had been established, the design of the project began to develop, resulting in some basic UML diagrams describing the database structure and website. The Waterfall process deviated slightly from its normally strict processes here where a few prototypes were developed to test out some of the design theories compiled during the design stage. Any issues or flaws in the design were corrected at this stage, enabling for the smoothest implementation possible.
+The planning that was carried out followed requirements specified by the Waterfall development methodology. Initially, a project specification document was developed to outline the requirements of the project. Once they had been established, the design of the project began to develop, resulting in some basic UML diagrams describing the database structure and website. The Waterfall process deviated slightly from its normally strict processes here where a few prototypes were developed to test out some of the design theories compiled during the design stage. Any issues or flaws in the design were corrected at this stage, enabling for the smoothest implementation possible.
 
 
